@@ -94,3 +94,9 @@ db.transaction(() => {
 console.log(`Imported ${kept} Greek words from ${files.length} files.`);
 if (unknownBooks.size) console.log(`Unrecognized book codes: ${[...unknownBooks].join(', ')}`);
 if (missingVerses.size) console.log(`${missingVerses.size} verse refs not in verses table, e.g. ${[...missingVerses].slice(0, 5).join(', ')}`);
+
+// Link disambiguated Strong's (e.g. G3004G) to lexicon keys (G3004)
+const owCols = db.prepare('PRAGMA table_info(original_words)').all() as { name: string }[];
+if (!owCols.some((c) => c.name === 'estrong')) db.exec('ALTER TABLE original_words ADD COLUMN estrong TEXT');
+db.exec("UPDATE original_words SET estrong = rtrim(strongs, 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz') WHERE estrong IS NULL OR estrong = ''");
+db.exec('CREATE INDEX IF NOT EXISTS idx_ow_estrong ON original_words(estrong)');

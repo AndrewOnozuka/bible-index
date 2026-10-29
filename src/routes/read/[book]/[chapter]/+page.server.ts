@@ -2,6 +2,11 @@ import { db } from '#lib/server/db';
 import { bookName } from '#lib/books';
 import { error } from '@sveltejs/kit';
 
+type Word = {
+  verse: number; position: number; surface: string; translit: string; english: string;
+  strongs: string; estrong: string; morph: string; gloss: string | null; lemma: string | null;
+};
+
 export function load({ params, url, cookies }) {
   const chapter = Number(params.chapter);
 
@@ -9,10 +14,8 @@ export function load({ params, url, cookies }) {
     db.prepare('SELECT DISTINCT translation FROM verse_text ORDER BY translation').all() as { translation: string }[]
   ).map((r) => r.translation);
 
-  // Priority: explicit ?t= link, then the saved cookie, then KJV, then anything
   const fromUrl = url.searchParams.get('t');
   const fromCookie = cookies.get('translation');
-
   let translation: string;
   if (fromUrl && translations.includes(fromUrl)) {
     translation = fromUrl;
@@ -31,5 +34,27 @@ export function load({ params, url, cookies }) {
   if (!verses.length) throw error(404, 'Chapter not found');
 
   const max = (db.prepare('SELECT MAX(chapter) m FROM verses WHERE book = ?').get(params.book) as any).m;
-  return { book: params.book, name: bookName(params.book), chapter, max, translation, translations, verses };
+
+  const hasOriginal = !!db.prepare(
+    `SELECT 1 FROM original_words o JOIN verses v ON v.id = o.verse_id WHERE v.book = ? AND v.chapter = ? LIMIT 1`
+  ).get(params.book, chapter);
+
+  const interlinear = url.searchParams.get('i') === '1';
+  const words: Record<number, Word[]> = {};
+  if (interlinear && hasOriginal) {
+    const rows = db.prepare(
+      `SELECT v.verse AS verse, o.position, o.surface, o.translit, o.english, o.strongs, o.estrong, o.morph,
+              l.gloss, l.lemma
+       FROM verses v
+       JOIN original_words o ON o.verse_id = v.id
+       LEFT JOIN lexicon l ON l.strongs = o.estrong
+       WHERE v.book = ? AND v.chapter = ? ORDER BY v.verse, o.position`
+    ).all(params.book, chapter) as Word[];
+    for (const r of rows) (words[r.verse] ??= []).push(r);
+  }
+
+  return {
+    book: params.book, name: bookName(params.book), chapter, max,
+    translation, translations, verses, interlinear, hasOriginal, words
+  };
 }
