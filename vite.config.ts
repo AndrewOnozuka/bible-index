@@ -10,10 +10,15 @@ export default defineConfig({
     }
   },
   plugins: [
-    sveltekit({
+        sveltekit({
       compilerOptions: {
         runes: ({ filename }) =>
           filename.split(/[/\\]/).includes('node_modules') ? undefined : true
+      },
+      paths: {
+        base: process.env.BASE_PATH
+          ? `/${process.env.BASE_PATH.replace(/^\/+|\/+$/g, '')}`
+          : ''
       },
       adapter: adapter({
         fallback: '404.html'
