@@ -38,6 +38,7 @@ jobs:
         run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}
+          STATIC_KJV_BUILD: '1'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
