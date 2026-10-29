@@ -35,6 +35,7 @@ db.transaction(() => {
         const id = verseId(osis, ch, vs);
         const text = String(v.text).replace(/\s+/g, ' ').trim();
         insVerse.run(id, osis, ch, vs, sort++);
+        if (!text) return;
         insText.run(id, translation, text);
         manifest.push(`${id}\t${createHash('sha256').update(text).digest('hex')}`);
       });
