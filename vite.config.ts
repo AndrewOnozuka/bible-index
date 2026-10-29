@@ -4,16 +4,25 @@ import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
+  define: {
+    'import.meta.env.VITE_BASE_PATH': JSON.stringify(
+      process.env.BASE_PATH
+        ? `/${process.env.BASE_PATH.replace(/^\/+|\/+$/g, '')}`
+        : ''
+    )
+  },
   resolve: {
     alias: {
       '#lib': fileURLToPath(new URL('./src/lib', import.meta.url))
     }
   },
   plugins: [
-        sveltekit({
+    sveltekit({
       compilerOptions: {
         runes: ({ filename }) =>
-          filename.split(/[/\\]/).includes('node_modules') ? undefined : true
+          filename.split(/[\\/]/).includes('node_modules')
+            ? undefined
+            : true
       },
       paths: {
         base: process.env.BASE_PATH

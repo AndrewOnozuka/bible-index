@@ -1,11 +1,14 @@
 <script lang="ts">
+  const base = import.meta.env.VITE_BASE_PATH;
+  console.log('BASE_URL:', import.meta.env.BASE_URL, 'base:', base);
+
   let { data } = $props();
   const tail = $derived(`?t=${data.translation}${data.interlinear ? '&i=1' : ''}`);
   const label = $derived(data.lang === 'heb' ? 'Hebrew' : 'Greek');
   const rtl = $derived(data.lang === 'heb');
 </script>
 
-<p><a href="/">← All books</a></p>
+<p><a href="{base}/">← All books</a></p>
 <h1>{data.name} {data.chapter}</h1>
 
 <p>
@@ -39,7 +42,7 @@
     {#if data.interlinear && data.words[v.verse]}
       <div class="il" dir="ltr">
         {#each data.words[v.verse] as w (w.position)}
-          <a class="w" href="/lexicon/{w.estrong}">
+          <a class="w" href="{base}/lexicon/{w.estrong}">
             <span class="gr" class:heb={rtl}>{w.surface}</span>
             <span class="tr" dir="ltr">{w.translit}</span>
             <span class="en" dir="ltr">{w.english}</span>
@@ -56,8 +59,12 @@
 {/each}
 
 <nav>
-  {#if data.chapter > 1}<a href="/read/{data.book}/{data.chapter - 1}{tail}">← Previous</a>{/if}
-  {#if data.chapter < data.max}<a href="/read/{data.book}/{data.chapter + 1}{tail}">Next →</a>{/if}
+  {#if data.chapter > 1}
+    <a href="{base}/read/{data.book}/{data.chapter - 1}{tail}">← Previous</a>
+  {/if}
+  {#if data.chapter < data.max}
+    <a href="{base}/read/{data.book}/{data.chapter + 1}{tail}">Next →</a>
+  {/if}
 </nav>
 
 <style>

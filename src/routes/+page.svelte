@@ -1,5 +1,5 @@
 <script lang="ts">
-  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const base = import.meta.env.VITE_BASE_PATH;
 
   let { data } = $props();
 </script>
