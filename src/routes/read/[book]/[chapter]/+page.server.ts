@@ -2,20 +2,26 @@ import { db } from '#lib/server/db';
 import { bookName } from '#lib/books';
 import { error } from '@sveltejs/kit';
 
-export function load({ params, url }) {
+export function load({ params, url, cookies }) {
   const chapter = Number(params.chapter);
 
   const translations = (
     db.prepare('SELECT DISTINCT translation FROM verse_text ORDER BY translation').all() as { translation: string }[]
   ).map((r) => r.translation);
 
-  const requested = url.searchParams.get('t');
-  const translation =
-    requested && translations.includes(requested)
-      ? requested
-      : translations.includes('KJV')
-        ? 'KJV'
-        : translations[0];
+  // Priority: explicit ?t= link, then the saved cookie, then KJV, then anything
+  const fromUrl = url.searchParams.get('t');
+  const fromCookie = cookies.get('translation');
+
+  let translation: string;
+  if (fromUrl && translations.includes(fromUrl)) {
+    translation = fromUrl;
+    cookies.set('translation', translation, { path: '/', maxAge: 60 * 60 * 24 * 365, sameSite: 'lax' });
+  } else if (fromCookie && translations.includes(fromCookie)) {
+    translation = fromCookie;
+  } else {
+    translation = translations.includes('KJV') ? 'KJV' : translations[0];
+  }
 
   const verses = db.prepare(
     `SELECT v.verse, t.text FROM verses v
