@@ -19,9 +19,10 @@ function render(def: string): string {
 }
 
 export function load({ params }) {
-  const m = /^([GH])0*(\d+)$/i.exec(params.strongs);
-  if (!m) throw error(404, 'Not a Strong\'s number');
-  const key = `${m[1].toUpperCase()}${m[2].padStart(4, '0')}`;
+  // Accepts G26, G0026, H0430G, H430g, and so on
+  const m = /^([GH])0*(\d+)([A-Za-z]?)$/i.exec(params.strongs);
+  if (!m) throw error(404, "Not a Strong's number");
+  const key = `${m[1].toUpperCase()}${m[2].padStart(4, '0')}${m[3].toUpperCase()}`;
 
   const entry = db.prepare('SELECT * FROM lexicon WHERE strongs = ?').get(key) as any;
   if (!entry) throw error(404, `No lexicon entry for ${key}`);

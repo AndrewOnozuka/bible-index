@@ -35,9 +35,12 @@ export function load({ params, url, cookies }) {
 
   const max = (db.prepare('SELECT MAX(chapter) m FROM verses WHERE book = ?').get(params.book) as any).m;
 
-  const hasOriginal = !!db.prepare(
-    `SELECT 1 FROM original_words o JOIN verses v ON v.id = o.verse_id WHERE v.book = ? AND v.chapter = ? LIMIT 1`
-  ).get(params.book, chapter);
+  const orig = db.prepare(
+    `SELECT o.lang AS lang FROM original_words o JOIN verses v ON v.id = o.verse_id
+     WHERE v.book = ? AND v.chapter = ? LIMIT 1`
+  ).get(params.book, chapter) as { lang: string } | undefined;
+  const hasOriginal = !!orig;
+  const lang = orig?.lang ?? null;
 
   const interlinear = url.searchParams.get('i') === '1';
   const words: Record<number, Word[]> = {};
@@ -55,6 +58,6 @@ export function load({ params, url, cookies }) {
 
   return {
     book: params.book, name: bookName(params.book), chapter, max,
-    translation, translations, verses, interlinear, hasOriginal, words
+    translation, translations, verses, interlinear, hasOriginal, lang, words
   };
 }
