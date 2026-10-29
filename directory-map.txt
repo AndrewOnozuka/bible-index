@@ -1,0 +1,2350 @@
+.
+├── data
+│   ├── manifests
+│   │   ├── ASV.tsv
+│   │   ├── BBE.tsv
+│   │   ├── BSB.tsv
+│   │   ├── Darby.tsv
+│   │   ├── Geneva1599.tsv
+│   │   ├── JapBungo.tsv
+│   │   ├── JapDenmo.tsv
+│   │   ├── JapKougo.tsv
+│   │   ├── KJV.tsv
+│   │   ├── NHEB.tsv
+│   │   ├── Webster.tsv
+│   │   └── YLT.tsv
+│   ├── raw
+│   │   ├── scrollmapper
+│   │   │   ├── docs
+│   │   │   │   ├── 0_introduction.md
+│   │   │   │   ├── 1_project_layout.md
+│   │   │   │   ├── 2_scripting.md
+│   │   │   │   ├── 3_sql.md
+│   │   │   │   ├── 4_adding_texts.md
+│   │   │   │   ├── main_readme
+│   │   │   │   │   ├── book_list.md
+│   │   │   │   │   ├── introduction.md
+│   │   │   │   │   ├── license.md
+│   │   │   │   │   ├── schema.md
+│   │   │   │   │   └── translation_list.md
+│   │   │   │   ├── README.md
+│   │   │   │   └── scrollmapper.png
+│   │   │   ├── formats
+│   │   │   │   ├── csv
+│   │   │   │   │   ├── ACV.csv
+│   │   │   │   │   ├── AKJV.csv
+│   │   │   │   │   ├── Alb.csv
+│   │   │   │   │   ├── Anderson.csv
+│   │   │   │   │   ├── ArmEastern.csv
+│   │   │   │   │   ├── ASV.csv
+│   │   │   │   │   ├── BBE.csv
+│   │   │   │   │   ├── BeaMRK.csv
+│   │   │   │   │   ├── BSB.csv
+│   │   │   │   │   ├── BurJudson.csv
+│   │   │   │   │   ├── Byz.csv
+│   │   │   │   │   ├── CebPinadayag.csv
+│   │   │   │   │   ├── Che1860.csv
+│   │   │   │   │   ├── ChiSB.csv
+│   │   │   │   │   ├── ChiUn.csv
+│   │   │   │   │   ├── ChiUnL.csv
+│   │   │   │   │   ├── CopSahBible2.csv
+│   │   │   │   │   ├── CPDV.csv
+│   │   │   │   │   ├── CroSaric.csv
+│   │   │   │   │   ├── CSlElizabeth.csv
+│   │   │   │   │   ├── CzeBKR.csv
+│   │   │   │   │   ├── CzeCSP.csv
+│   │   │   │   │   ├── DaOT1871NT1907.csv
+│   │   │   │   │   ├── Darby.csv
+│   │   │   │   │   ├── DRC.csv
+│   │   │   │   │   ├── DutSVV.csv
+│   │   │   │   │   ├── DutSVVA.csv
+│   │   │   │   │   ├── Esperanto.csv
+│   │   │   │   │   ├── Est.csv
+│   │   │   │   │   ├── FinBiblia.csv
+│   │   │   │   │   ├── FinPR.csv
+│   │   │   │   │   ├── FinSTLK2017.csv
+│   │   │   │   │   ├── FreBBB.csv
+│   │   │   │   │   ├── FreBDM1744.csv
+│   │   │   │   │   ├── FreCrampon.csv
+│   │   │   │   │   ├── FreGeneve1669.csv
+│   │   │   │   │   ├── FreJND.csv
+│   │   │   │   │   ├── FreLXX.csv
+│   │   │   │   │   ├── FreLXXGiguet.csv
+│   │   │   │   │   ├── FreOltramare1874.csv
+│   │   │   │   │   ├── FrePGR.csv
+│   │   │   │   │   ├── FreStapfer1889.csv
+│   │   │   │   │   ├── FreSynodale1921.csv
+│   │   │   │   │   ├── Geneva1599.csv
+│   │   │   │   │   ├── GerAlbrecht.csv
+│   │   │   │   │   ├── GerBoLut.csv
+│   │   │   │   │   ├── GerElb1871.csv
+│   │   │   │   │   ├── GerElb1905.csv
+│   │   │   │   │   ├── GerGruenewald.csv
+│   │   │   │   │   ├── GerLeoNA28.csv
+│   │   │   │   │   ├── GerMenge.csv
+│   │   │   │   │   ├── GerOffBiSt.csv
+│   │   │   │   │   ├── GerSch.csv
+│   │   │   │   │   ├── GerTafel.csv
+│   │   │   │   │   ├── GerTextbibel.csv
+│   │   │   │   │   ├── GerZurcher.csv
+│   │   │   │   │   ├── GreVamvas.csv
+│   │   │   │   │   ├── Haitian.csv
+│   │   │   │   │   ├── Haweis.csv
+│   │   │   │   │   ├── HebModern.csv
+│   │   │   │   │   ├── HunKar.csv
+│   │   │   │   │   ├── JapBungo.csv
+│   │   │   │   │   ├── JapDenmo.csv
+│   │   │   │   │   ├── JapKougo.csv
+│   │   │   │   │   ├── JPS.csv
+│   │   │   │   │   ├── Jubilee2000.csv
+│   │   │   │   │   ├── KJV.csv
+│   │   │   │   │   ├── KJVA.csv
+│   │   │   │   │   ├── KJVPCE.csv
+│   │   │   │   │   ├── KLV.csv
+│   │   │   │   │   ├── KorHKJV.csv
+│   │   │   │   │   ├── KorRV.csv
+│   │   │   │   │   ├── LEB.csv
+│   │   │   │   │   ├── LITV.csv
+│   │   │   │   │   ├── LvGluck8.csv
+│   │   │   │   │   ├── Mal1910.csv
+│   │   │   │   │   ├── ManxGaelic.csv
+│   │   │   │   │   ├── Maori.csv
+│   │   │   │   │   ├── MapM.csv
+│   │   │   │   │   ├── Mg1865.csv
+│   │   │   │   │   ├── MKJV.csv
+│   │   │   │   │   ├── NHEB.csv
+│   │   │   │   │   ├── NHEBJE.csv
+│   │   │   │   │   ├── NHEBME.csv
+│   │   │   │   │   ├── NlCanisius1939.csv
+│   │   │   │   │   ├── Norsk.csv
+│   │   │   │   │   ├── NorSMB.csv
+│   │   │   │   │   ├── Noyes.csv
+│   │   │   │   │   ├── OEB.csv
+│   │   │   │   │   ├── OEBcth.csv
+│   │   │   │   │   ├── Peshitta.csv
+│   │   │   │   │   ├── PohnOld.csv
+│   │   │   │   │   ├── PolGdanska.csv
+│   │   │   │   │   ├── PolUGdanska.csv
+│   │   │   │   │   ├── PorBLivre.csv
+│   │   │   │   │   ├── PorBLivreTR.csv
+│   │   │   │   │   ├── PorNVA.csv
+│   │   │   │   │   ├── RLT.csv
+│   │   │   │   │   ├── RNKJV.csv
+│   │   │   │   │   ├── Rotherham.csv
+│   │   │   │   │   ├── RusMakarij.csv
+│   │   │   │   │   ├── RusSynodal.csv
+│   │   │   │   │   ├── RWebster.csv
+│   │   │   │   │   ├── SloChraska.csv
+│   │   │   │   │   ├── SloKJV.csv
+│   │   │   │   │   ├── SloOjacano.csv
+│   │   │   │   │   ├── SloStritar.csv
+│   │   │   │   │   ├── sml_BL_2008.csv
+│   │   │   │   │   ├── SP.csv
+│   │   │   │   │   ├── SpaPlatense.csv
+│   │   │   │   │   ├── SpaRV.csv
+│   │   │   │   │   ├── SpaRV1865.csv
+│   │   │   │   │   ├── SpaRVG.csv
+│   │   │   │   │   ├── SrKDEkavski.csv
+│   │   │   │   │   ├── SrKDIjekav.csv
+│   │   │   │   │   ├── StatResGNT.csv
+│   │   │   │   │   ├── Swe1917.csv
+│   │   │   │   │   ├── SweKarlXII.csv
+│   │   │   │   │   ├── SweKarlXII1873.csv
+│   │   │   │   │   ├── TagAngBiblia.csv
+│   │   │   │   │   ├── Tausug.csv
+│   │   │   │   │   ├── ThaiKJV.csv
+│   │   │   │   │   ├── TpiKJPB.csv
+│   │   │   │   │   ├── TR.csv
+│   │   │   │   │   ├── Twenty.csv
+│   │   │   │   │   ├── Tyndale.csv
+│   │   │   │   │   ├── UKJV.csv
+│   │   │   │   │   ├── UkrOgienko.csv
+│   │   │   │   │   ├── Viet.csv
+│   │   │   │   │   ├── vlsJoNT.csv
+│   │   │   │   │   ├── Vulgate.csv
+│   │   │   │   │   ├── VulgClementine.csv
+│   │   │   │   │   ├── VulgConte.csv
+│   │   │   │   │   ├── VulgHetzenauer.csv
+│   │   │   │   │   ├── VulgSistine.csv
+│   │   │   │   │   ├── Webster.csv
+│   │   │   │   │   ├── WLC.csv
+│   │   │   │   │   ├── Wulfila.csv
+│   │   │   │   │   ├── Wycliffe.csv
+│   │   │   │   │   └── YLT.csv
+│   │   │   │   ├── json
+│   │   │   │   │   ├── ACV.json
+│   │   │   │   │   ├── AKJV.json
+│   │   │   │   │   ├── Alb.json
+│   │   │   │   │   ├── Anderson.json
+│   │   │   │   │   ├── ArmEastern.json
+│   │   │   │   │   ├── ASV.json
+│   │   │   │   │   ├── BBE.json
+│   │   │   │   │   ├── BeaMRK.json
+│   │   │   │   │   ├── BSB.json
+│   │   │   │   │   ├── BurJudson.json
+│   │   │   │   │   ├── Byz.json
+│   │   │   │   │   ├── CebPinadayag.json
+│   │   │   │   │   ├── Che1860.json
+│   │   │   │   │   ├── ChiSB.json
+│   │   │   │   │   ├── ChiUn.json
+│   │   │   │   │   ├── ChiUnL.json
+│   │   │   │   │   ├── CopSahBible2.json
+│   │   │   │   │   ├── CPDV.json
+│   │   │   │   │   ├── CroSaric.json
+│   │   │   │   │   ├── CSlElizabeth.json
+│   │   │   │   │   ├── CzeBKR.json
+│   │   │   │   │   ├── CzeCSP.json
+│   │   │   │   │   ├── DaOT1871NT1907.json
+│   │   │   │   │   ├── Darby.json
+│   │   │   │   │   ├── DRC.json
+│   │   │   │   │   ├── DutSVV.json
+│   │   │   │   │   ├── DutSVVA.json
+│   │   │   │   │   ├── Esperanto.json
+│   │   │   │   │   ├── Est.json
+│   │   │   │   │   ├── FinBiblia.json
+│   │   │   │   │   ├── FinPR.json
+│   │   │   │   │   ├── FinSTLK2017.json
+│   │   │   │   │   ├── FreBBB.json
+│   │   │   │   │   ├── FreBDM1744.json
+│   │   │   │   │   ├── FreCrampon.json
+│   │   │   │   │   ├── FreGeneve1669.json
+│   │   │   │   │   ├── FreJND.json
+│   │   │   │   │   ├── FreLXX.json
+│   │   │   │   │   ├── FreLXXGiguet.json
+│   │   │   │   │   ├── FreOltramare1874.json
+│   │   │   │   │   ├── FrePGR.json
+│   │   │   │   │   ├── FreStapfer1889.json
+│   │   │   │   │   ├── FreSynodale1921.json
+│   │   │   │   │   ├── Geneva1599.json
+│   │   │   │   │   ├── GerAlbrecht.json
+│   │   │   │   │   ├── GerBoLut.json
+│   │   │   │   │   ├── GerElb1871.json
+│   │   │   │   │   ├── GerElb1905.json
+│   │   │   │   │   ├── GerGruenewald.json
+│   │   │   │   │   ├── GerLeoNA28.json
+│   │   │   │   │   ├── GerMenge.json
+│   │   │   │   │   ├── GerOffBiSt.json
+│   │   │   │   │   ├── GerSch.json
+│   │   │   │   │   ├── GerTafel.json
+│   │   │   │   │   ├── GerTextbibel.json
+│   │   │   │   │   ├── GerZurcher.json
+│   │   │   │   │   ├── GreVamvas.json
+│   │   │   │   │   ├── Haitian.json
+│   │   │   │   │   ├── Haweis.json
+│   │   │   │   │   ├── HebModern.json
+│   │   │   │   │   ├── HunKar.json
+│   │   │   │   │   ├── JapBungo.json
+│   │   │   │   │   ├── JapDenmo.json
+│   │   │   │   │   ├── JapKougo.json
+│   │   │   │   │   ├── JPS.json
+│   │   │   │   │   ├── Jubilee2000.json
+│   │   │   │   │   ├── KJV.json
+│   │   │   │   │   ├── KJVA.json
+│   │   │   │   │   ├── KJVPCE.json
+│   │   │   │   │   ├── KLV.json
+│   │   │   │   │   ├── KorHKJV.json
+│   │   │   │   │   ├── KorRV.json
+│   │   │   │   │   ├── LEB.json
+│   │   │   │   │   ├── LITV.json
+│   │   │   │   │   ├── LvGluck8.json
+│   │   │   │   │   ├── Mal1910.json
+│   │   │   │   │   ├── ManxGaelic.json
+│   │   │   │   │   ├── Maori.json
+│   │   │   │   │   ├── MapM.json
+│   │   │   │   │   ├── Mg1865.json
+│   │   │   │   │   ├── MKJV.json
+│   │   │   │   │   ├── NHEB.json
+│   │   │   │   │   ├── NHEBJE.json
+│   │   │   │   │   ├── NHEBME.json
+│   │   │   │   │   ├── NlCanisius1939.json
+│   │   │   │   │   ├── Norsk.json
+│   │   │   │   │   ├── NorSMB.json
+│   │   │   │   │   ├── Noyes.json
+│   │   │   │   │   ├── OEB.json
+│   │   │   │   │   ├── OEBcth.json
+│   │   │   │   │   ├── Peshitta.json
+│   │   │   │   │   ├── PohnOld.json
+│   │   │   │   │   ├── PolGdanska.json
+│   │   │   │   │   ├── PolUGdanska.json
+│   │   │   │   │   ├── PorBLivre.json
+│   │   │   │   │   ├── PorBLivreTR.json
+│   │   │   │   │   ├── PorNVA.json
+│   │   │   │   │   ├── RLT.json
+│   │   │   │   │   ├── RNKJV.json
+│   │   │   │   │   ├── Rotherham.json
+│   │   │   │   │   ├── RusMakarij.json
+│   │   │   │   │   ├── RusSynodal.json
+│   │   │   │   │   ├── RWebster.json
+│   │   │   │   │   ├── SloChraska.json
+│   │   │   │   │   ├── SloKJV.json
+│   │   │   │   │   ├── SloOjacano.json
+│   │   │   │   │   ├── SloStritar.json
+│   │   │   │   │   ├── sml_BL_2008.json
+│   │   │   │   │   ├── SP.json
+│   │   │   │   │   ├── SpaPlatense.json
+│   │   │   │   │   ├── SpaRV.json
+│   │   │   │   │   ├── SpaRV1865.json
+│   │   │   │   │   ├── SpaRVG.json
+│   │   │   │   │   ├── SrKDEkavski.json
+│   │   │   │   │   ├── SrKDIjekav.json
+│   │   │   │   │   ├── StatResGNT.json
+│   │   │   │   │   ├── Swe1917.json
+│   │   │   │   │   ├── SweKarlXII.json
+│   │   │   │   │   ├── SweKarlXII1873.json
+│   │   │   │   │   ├── TagAngBiblia.json
+│   │   │   │   │   ├── Tausug.json
+│   │   │   │   │   ├── ThaiKJV.json
+│   │   │   │   │   ├── TpiKJPB.json
+│   │   │   │   │   ├── TR.json
+│   │   │   │   │   ├── Twenty.json
+│   │   │   │   │   ├── Tyndale.json
+│   │   │   │   │   ├── UKJV.json
+│   │   │   │   │   ├── UkrOgienko.json
+│   │   │   │   │   ├── Viet.json
+│   │   │   │   │   ├── vlsJoNT.json
+│   │   │   │   │   ├── Vulgate.json
+│   │   │   │   │   ├── VulgClementine.json
+│   │   │   │   │   ├── VulgConte.json
+│   │   │   │   │   ├── VulgHetzenauer.json
+│   │   │   │   │   ├── VulgSistine.json
+│   │   │   │   │   ├── Webster.json
+│   │   │   │   │   ├── WLC.json
+│   │   │   │   │   ├── Wulfila.json
+│   │   │   │   │   ├── Wycliffe.json
+│   │   │   │   │   └── YLT.json
+│   │   │   │   ├── md
+│   │   │   │   │   ├── ACV.md
+│   │   │   │   │   ├── AKJV.md
+│   │   │   │   │   ├── Alb.md
+│   │   │   │   │   ├── Anderson.md
+│   │   │   │   │   ├── ArmEastern.md
+│   │   │   │   │   ├── ASV.md
+│   │   │   │   │   ├── BBE.md
+│   │   │   │   │   ├── BeaMRK.md
+│   │   │   │   │   ├── BSB.md
+│   │   │   │   │   ├── BurJudson.md
+│   │   │   │   │   ├── Byz.md
+│   │   │   │   │   ├── CebPinadayag.md
+│   │   │   │   │   ├── Che1860.md
+│   │   │   │   │   ├── ChiSB.md
+│   │   │   │   │   ├── ChiUn.md
+│   │   │   │   │   ├── ChiUnL.md
+│   │   │   │   │   ├── CopSahBible2.md
+│   │   │   │   │   ├── CPDV.md
+│   │   │   │   │   ├── CroSaric.md
+│   │   │   │   │   ├── CSlElizabeth.md
+│   │   │   │   │   ├── CzeBKR.md
+│   │   │   │   │   ├── CzeCSP.md
+│   │   │   │   │   ├── DaOT1871NT1907.md
+│   │   │   │   │   ├── Darby.md
+│   │   │   │   │   ├── DRC.md
+│   │   │   │   │   ├── DutSVV.md
+│   │   │   │   │   ├── DutSVVA.md
+│   │   │   │   │   ├── Esperanto.md
+│   │   │   │   │   ├── Est.md
+│   │   │   │   │   ├── FinBiblia.md
+│   │   │   │   │   ├── FinPR.md
+│   │   │   │   │   ├── FinSTLK2017.md
+│   │   │   │   │   ├── FreBBB.md
+│   │   │   │   │   ├── FreBDM1744.md
+│   │   │   │   │   ├── FreCrampon.md
+│   │   │   │   │   ├── FreGeneve1669.md
+│   │   │   │   │   ├── FreJND.md
+│   │   │   │   │   ├── FreLXX.md
+│   │   │   │   │   ├── FreLXXGiguet.md
+│   │   │   │   │   ├── FreOltramare1874.md
+│   │   │   │   │   ├── FrePGR.md
+│   │   │   │   │   ├── FreStapfer1889.md
+│   │   │   │   │   ├── FreSynodale1921.md
+│   │   │   │   │   ├── Geneva1599.md
+│   │   │   │   │   ├── GerAlbrecht.md
+│   │   │   │   │   ├── GerBoLut.md
+│   │   │   │   │   ├── GerElb1871.md
+│   │   │   │   │   ├── GerElb1905.md
+│   │   │   │   │   ├── GerGruenewald.md
+│   │   │   │   │   ├── GerLeoNA28.md
+│   │   │   │   │   ├── GerMenge.md
+│   │   │   │   │   ├── GerOffBiSt.md
+│   │   │   │   │   ├── GerSch.md
+│   │   │   │   │   ├── GerTafel.md
+│   │   │   │   │   ├── GerTextbibel.md
+│   │   │   │   │   ├── GerZurcher.md
+│   │   │   │   │   ├── GreVamvas.md
+│   │   │   │   │   ├── Haitian.md
+│   │   │   │   │   ├── Haweis.md
+│   │   │   │   │   ├── HebModern.md
+│   │   │   │   │   ├── HunKar.md
+│   │   │   │   │   ├── JapBungo.md
+│   │   │   │   │   ├── JapDenmo.md
+│   │   │   │   │   ├── JapKougo.md
+│   │   │   │   │   ├── JPS.md
+│   │   │   │   │   ├── Jubilee2000.md
+│   │   │   │   │   ├── KJV.md
+│   │   │   │   │   ├── KJVA.md
+│   │   │   │   │   ├── KJVPCE.md
+│   │   │   │   │   ├── KLV.md
+│   │   │   │   │   ├── KorHKJV.md
+│   │   │   │   │   ├── KorRV.md
+│   │   │   │   │   ├── LEB.md
+│   │   │   │   │   ├── LITV.md
+│   │   │   │   │   ├── LvGluck8.md
+│   │   │   │   │   ├── Mal1910.md
+│   │   │   │   │   ├── ManxGaelic.md
+│   │   │   │   │   ├── Maori.md
+│   │   │   │   │   ├── MapM.md
+│   │   │   │   │   ├── Mg1865.md
+│   │   │   │   │   ├── MKJV.md
+│   │   │   │   │   ├── NHEB.md
+│   │   │   │   │   ├── NHEBJE.md
+│   │   │   │   │   ├── NHEBME.md
+│   │   │   │   │   ├── NlCanisius1939.md
+│   │   │   │   │   ├── Norsk.md
+│   │   │   │   │   ├── NorSMB.md
+│   │   │   │   │   ├── Noyes.md
+│   │   │   │   │   ├── OEB.md
+│   │   │   │   │   ├── OEBcth.md
+│   │   │   │   │   ├── Peshitta.md
+│   │   │   │   │   ├── PohnOld.md
+│   │   │   │   │   ├── PolGdanska.md
+│   │   │   │   │   ├── PolUGdanska.md
+│   │   │   │   │   ├── PorBLivre.md
+│   │   │   │   │   ├── PorBLivreTR.md
+│   │   │   │   │   ├── PorNVA.md
+│   │   │   │   │   ├── RLT.md
+│   │   │   │   │   ├── RNKJV.md
+│   │   │   │   │   ├── Rotherham.md
+│   │   │   │   │   ├── RusMakarij.md
+│   │   │   │   │   ├── RusSynodal.md
+│   │   │   │   │   ├── RWebster.md
+│   │   │   │   │   ├── SloChraska.md
+│   │   │   │   │   ├── SloKJV.md
+│   │   │   │   │   ├── SloOjacano.md
+│   │   │   │   │   ├── SloStritar.md
+│   │   │   │   │   ├── sml_BL_2008.md
+│   │   │   │   │   ├── SP.md
+│   │   │   │   │   ├── SpaPlatense.md
+│   │   │   │   │   ├── SpaRV.md
+│   │   │   │   │   ├── SpaRV1865.md
+│   │   │   │   │   ├── SpaRVG.md
+│   │   │   │   │   ├── SrKDEkavski.md
+│   │   │   │   │   ├── SrKDIjekav.md
+│   │   │   │   │   ├── StatResGNT.md
+│   │   │   │   │   ├── Swe1917.md
+│   │   │   │   │   ├── SweKarlXII.md
+│   │   │   │   │   ├── SweKarlXII1873.md
+│   │   │   │   │   ├── TagAngBiblia.md
+│   │   │   │   │   ├── Tausug.md
+│   │   │   │   │   ├── ThaiKJV.md
+│   │   │   │   │   ├── TpiKJPB.md
+│   │   │   │   │   ├── TR.md
+│   │   │   │   │   ├── Twenty.md
+│   │   │   │   │   ├── Tyndale.md
+│   │   │   │   │   ├── UKJV.md
+│   │   │   │   │   ├── UkrOgienko.md
+│   │   │   │   │   ├── Viet.md
+│   │   │   │   │   ├── vlsJoNT.md
+│   │   │   │   │   ├── Vulgate.md
+│   │   │   │   │   ├── VulgClementine.md
+│   │   │   │   │   ├── VulgConte.md
+│   │   │   │   │   ├── VulgHetzenauer.md
+│   │   │   │   │   ├── VulgSistine.md
+│   │   │   │   │   ├── Webster.md
+│   │   │   │   │   ├── WLC.md
+│   │   │   │   │   ├── Wulfila.md
+│   │   │   │   │   ├── Wycliffe.md
+│   │   │   │   │   └── YLT.md
+│   │   │   │   ├── parquet
+│   │   │   │   │   ├── ACV.parquet
+│   │   │   │   │   ├── AKJV.parquet
+│   │   │   │   │   ├── Alb.parquet
+│   │   │   │   │   ├── Anderson.parquet
+│   │   │   │   │   ├── ArmEastern.parquet
+│   │   │   │   │   ├── ASV.parquet
+│   │   │   │   │   ├── BBE.parquet
+│   │   │   │   │   ├── BeaMRK.parquet
+│   │   │   │   │   ├── BSB.parquet
+│   │   │   │   │   ├── BurJudson.parquet
+│   │   │   │   │   ├── Byz.parquet
+│   │   │   │   │   ├── CebPinadayag.parquet
+│   │   │   │   │   ├── Che1860.parquet
+│   │   │   │   │   ├── ChiSB.parquet
+│   │   │   │   │   ├── ChiUn.parquet
+│   │   │   │   │   ├── ChiUnL.parquet
+│   │   │   │   │   ├── CopSahBible2.parquet
+│   │   │   │   │   ├── CPDV.parquet
+│   │   │   │   │   ├── CroSaric.parquet
+│   │   │   │   │   ├── CSlElizabeth.parquet
+│   │   │   │   │   ├── CzeBKR.parquet
+│   │   │   │   │   ├── CzeCSP.parquet
+│   │   │   │   │   ├── DaOT1871NT1907.parquet
+│   │   │   │   │   ├── Darby.parquet
+│   │   │   │   │   ├── DRC.parquet
+│   │   │   │   │   ├── DutSVV.parquet
+│   │   │   │   │   ├── DutSVVA.parquet
+│   │   │   │   │   ├── Esperanto.parquet
+│   │   │   │   │   ├── Est.parquet
+│   │   │   │   │   ├── FinBiblia.parquet
+│   │   │   │   │   ├── FinPR.parquet
+│   │   │   │   │   ├── FinSTLK2017.parquet
+│   │   │   │   │   ├── FreBBB.parquet
+│   │   │   │   │   ├── FreBDM1744.parquet
+│   │   │   │   │   ├── FreCrampon.parquet
+│   │   │   │   │   ├── FreGeneve1669.parquet
+│   │   │   │   │   ├── FreJND.parquet
+│   │   │   │   │   ├── FreLXX.parquet
+│   │   │   │   │   ├── FreLXXGiguet.parquet
+│   │   │   │   │   ├── FreOltramare1874.parquet
+│   │   │   │   │   ├── FrePGR.parquet
+│   │   │   │   │   ├── FreStapfer1889.parquet
+│   │   │   │   │   ├── FreSynodale1921.parquet
+│   │   │   │   │   ├── Geneva1599.parquet
+│   │   │   │   │   ├── GerAlbrecht.parquet
+│   │   │   │   │   ├── GerBoLut.parquet
+│   │   │   │   │   ├── GerElb1871.parquet
+│   │   │   │   │   ├── GerElb1905.parquet
+│   │   │   │   │   ├── GerGruenewald.parquet
+│   │   │   │   │   ├── GerLeoNA28.parquet
+│   │   │   │   │   ├── GerMenge.parquet
+│   │   │   │   │   ├── GerOffBiSt.parquet
+│   │   │   │   │   ├── GerSch.parquet
+│   │   │   │   │   ├── GerTafel.parquet
+│   │   │   │   │   ├── GerTextbibel.parquet
+│   │   │   │   │   ├── GerZurcher.parquet
+│   │   │   │   │   ├── GreVamvas.parquet
+│   │   │   │   │   ├── Haitian.parquet
+│   │   │   │   │   ├── Haweis.parquet
+│   │   │   │   │   ├── HebModern.parquet
+│   │   │   │   │   ├── HunKar.parquet
+│   │   │   │   │   ├── JapBungo.parquet
+│   │   │   │   │   ├── JapDenmo.parquet
+│   │   │   │   │   ├── JapKougo.parquet
+│   │   │   │   │   ├── JPS.parquet
+│   │   │   │   │   ├── Jubilee2000.parquet
+│   │   │   │   │   ├── KJV.parquet
+│   │   │   │   │   ├── KJVA.parquet
+│   │   │   │   │   ├── KJVPCE.parquet
+│   │   │   │   │   ├── KLV.parquet
+│   │   │   │   │   ├── KorHKJV.parquet
+│   │   │   │   │   ├── KorRV.parquet
+│   │   │   │   │   ├── LEB.parquet
+│   │   │   │   │   ├── LITV.parquet
+│   │   │   │   │   ├── LvGluck8.parquet
+│   │   │   │   │   ├── Mal1910.parquet
+│   │   │   │   │   ├── ManxGaelic.parquet
+│   │   │   │   │   ├── Maori.parquet
+│   │   │   │   │   ├── MapM.parquet
+│   │   │   │   │   ├── Mg1865.parquet
+│   │   │   │   │   ├── MKJV.parquet
+│   │   │   │   │   ├── NHEB.parquet
+│   │   │   │   │   ├── NHEBJE.parquet
+│   │   │   │   │   ├── NHEBME.parquet
+│   │   │   │   │   ├── NlCanisius1939.parquet
+│   │   │   │   │   ├── Norsk.parquet
+│   │   │   │   │   ├── NorSMB.parquet
+│   │   │   │   │   ├── Noyes.parquet
+│   │   │   │   │   ├── OEB.parquet
+│   │   │   │   │   ├── OEBcth.parquet
+│   │   │   │   │   ├── Peshitta.parquet
+│   │   │   │   │   ├── PohnOld.parquet
+│   │   │   │   │   ├── PolGdanska.parquet
+│   │   │   │   │   ├── PolUGdanska.parquet
+│   │   │   │   │   ├── PorBLivre.parquet
+│   │   │   │   │   ├── PorBLivreTR.parquet
+│   │   │   │   │   ├── PorNVA.parquet
+│   │   │   │   │   ├── RLT.parquet
+│   │   │   │   │   ├── RNKJV.parquet
+│   │   │   │   │   ├── Rotherham.parquet
+│   │   │   │   │   ├── RusMakarij.parquet
+│   │   │   │   │   ├── RusSynodal.parquet
+│   │   │   │   │   ├── RWebster.parquet
+│   │   │   │   │   ├── SloChraska.parquet
+│   │   │   │   │   ├── SloKJV.parquet
+│   │   │   │   │   ├── SloOjacano.parquet
+│   │   │   │   │   ├── SloStritar.parquet
+│   │   │   │   │   ├── sml_BL_2008.parquet
+│   │   │   │   │   ├── SP.parquet
+│   │   │   │   │   ├── SpaPlatense.parquet
+│   │   │   │   │   ├── SpaRV.parquet
+│   │   │   │   │   ├── SpaRV1865.parquet
+│   │   │   │   │   ├── SpaRVG.parquet
+│   │   │   │   │   ├── SrKDEkavski.parquet
+│   │   │   │   │   ├── SrKDIjekav.parquet
+│   │   │   │   │   ├── StatResGNT.parquet
+│   │   │   │   │   ├── Swe1917.parquet
+│   │   │   │   │   ├── SweKarlXII.parquet
+│   │   │   │   │   ├── SweKarlXII1873.parquet
+│   │   │   │   │   ├── TagAngBiblia.parquet
+│   │   │   │   │   ├── Tausug.parquet
+│   │   │   │   │   ├── ThaiKJV.parquet
+│   │   │   │   │   ├── TpiKJPB.parquet
+│   │   │   │   │   ├── TR.parquet
+│   │   │   │   │   ├── Twenty.parquet
+│   │   │   │   │   ├── Tyndale.parquet
+│   │   │   │   │   ├── UKJV.parquet
+│   │   │   │   │   ├── UkrOgienko.parquet
+│   │   │   │   │   ├── Viet.parquet
+│   │   │   │   │   ├── vlsJoNT.parquet
+│   │   │   │   │   ├── Vulgate.parquet
+│   │   │   │   │   ├── VulgClementine.parquet
+│   │   │   │   │   ├── VulgConte.parquet
+│   │   │   │   │   ├── VulgHetzenauer.parquet
+│   │   │   │   │   ├── VulgSistine.parquet
+│   │   │   │   │   ├── Webster.parquet
+│   │   │   │   │   ├── WLC.parquet
+│   │   │   │   │   ├── Wulfila.parquet
+│   │   │   │   │   ├── Wycliffe.parquet
+│   │   │   │   │   └── YLT.parquet
+│   │   │   │   ├── psql
+│   │   │   │   │   ├── extras
+│   │   │   │   │   │   ├── cross_references_0.sql
+│   │   │   │   │   │   ├── cross_references_1.sql
+│   │   │   │   │   │   ├── cross_references_2.sql
+│   │   │   │   │   │   ├── cross_references_3.sql
+│   │   │   │   │   │   ├── cross_references_4.sql
+│   │   │   │   │   │   ├── cross_references_5.sql
+│   │   │   │   │   │   └── cross_references_6.sql
+│   │   │   │   │   └── KJV.sql
+│   │   │   │   ├── sql
+│   │   │   │   │   ├── ACV.sql
+│   │   │   │   │   ├── AKJV.sql
+│   │   │   │   │   ├── Alb.sql
+│   │   │   │   │   ├── Anderson.sql
+│   │   │   │   │   ├── ArmEastern.sql
+│   │   │   │   │   ├── ASV.sql
+│   │   │   │   │   ├── BBE.sql
+│   │   │   │   │   ├── BeaMRK.sql
+│   │   │   │   │   ├── BSB.sql
+│   │   │   │   │   ├── BurJudson.sql
+│   │   │   │   │   ├── Byz.sql
+│   │   │   │   │   ├── CebPinadayag.sql
+│   │   │   │   │   ├── Che1860.sql
+│   │   │   │   │   ├── ChiSB.sql
+│   │   │   │   │   ├── ChiUn.sql
+│   │   │   │   │   ├── ChiUnL.sql
+│   │   │   │   │   ├── CopSahBible2.sql
+│   │   │   │   │   ├── CPDV.sql
+│   │   │   │   │   ├── CroSaric.sql
+│   │   │   │   │   ├── CSlElizabeth.sql
+│   │   │   │   │   ├── CzeBKR.sql
+│   │   │   │   │   ├── CzeCSP.sql
+│   │   │   │   │   ├── DaOT1871NT1907.sql
+│   │   │   │   │   ├── Darby.sql
+│   │   │   │   │   ├── DRC.sql
+│   │   │   │   │   ├── DutSVV.sql
+│   │   │   │   │   ├── DutSVVA.sql
+│   │   │   │   │   ├── Esperanto.sql
+│   │   │   │   │   ├── Est.sql
+│   │   │   │   │   ├── extras
+│   │   │   │   │   │   ├── cross_references_0.sql
+│   │   │   │   │   │   ├── cross_references_1.sql
+│   │   │   │   │   │   ├── cross_references_2.sql
+│   │   │   │   │   │   ├── cross_references_3.sql
+│   │   │   │   │   │   ├── cross_references_4.sql
+│   │   │   │   │   │   ├── cross_references_5.sql
+│   │   │   │   │   │   └── cross_references_6.sql
+│   │   │   │   │   ├── FinBiblia.sql
+│   │   │   │   │   ├── FinPR.sql
+│   │   │   │   │   ├── FinSTLK2017.sql
+│   │   │   │   │   ├── FreBBB.sql
+│   │   │   │   │   ├── FreBDM1744.sql
+│   │   │   │   │   ├── FreCrampon.sql
+│   │   │   │   │   ├── FreGeneve1669.sql
+│   │   │   │   │   ├── FreJND.sql
+│   │   │   │   │   ├── FreLXX.sql
+│   │   │   │   │   ├── FreLXXGiguet.sql
+│   │   │   │   │   ├── FreOltramare1874.sql
+│   │   │   │   │   ├── FrePGR.sql
+│   │   │   │   │   ├── FreStapfer1889.sql
+│   │   │   │   │   ├── FreSynodale1921.sql
+│   │   │   │   │   ├── Geneva1599.sql
+│   │   │   │   │   ├── GerAlbrecht.sql
+│   │   │   │   │   ├── GerBoLut.sql
+│   │   │   │   │   ├── GerElb1871.sql
+│   │   │   │   │   ├── GerElb1905.sql
+│   │   │   │   │   ├── GerGruenewald.sql
+│   │   │   │   │   ├── GerLeoNA28.sql
+│   │   │   │   │   ├── GerMenge.sql
+│   │   │   │   │   ├── GerOffBiSt.sql
+│   │   │   │   │   ├── GerSch.sql
+│   │   │   │   │   ├── GerTafel.sql
+│   │   │   │   │   ├── GerTextbibel.sql
+│   │   │   │   │   ├── GerZurcher.sql
+│   │   │   │   │   ├── GreVamvas.sql
+│   │   │   │   │   ├── Haitian.sql
+│   │   │   │   │   ├── Haweis.sql
+│   │   │   │   │   ├── HebModern.sql
+│   │   │   │   │   ├── HunKar.sql
+│   │   │   │   │   ├── JapBungo.sql
+│   │   │   │   │   ├── JapDenmo.sql
+│   │   │   │   │   ├── JapKougo.sql
+│   │   │   │   │   ├── JPS.sql
+│   │   │   │   │   ├── Jubilee2000.sql
+│   │   │   │   │   ├── KJV.sql
+│   │   │   │   │   ├── KJVA.sql
+│   │   │   │   │   ├── KJVPCE.sql
+│   │   │   │   │   ├── KLV.sql
+│   │   │   │   │   ├── KorHKJV.sql
+│   │   │   │   │   ├── KorRV.sql
+│   │   │   │   │   ├── LEB.sql
+│   │   │   │   │   ├── LITV.sql
+│   │   │   │   │   ├── LvGluck8.sql
+│   │   │   │   │   ├── Mal1910.sql
+│   │   │   │   │   ├── ManxGaelic.sql
+│   │   │   │   │   ├── Maori.sql
+│   │   │   │   │   ├── MapM.sql
+│   │   │   │   │   ├── Mg1865.sql
+│   │   │   │   │   ├── MKJV.sql
+│   │   │   │   │   ├── NHEB.sql
+│   │   │   │   │   ├── NHEBJE.sql
+│   │   │   │   │   ├── NHEBME.sql
+│   │   │   │   │   ├── NlCanisius1939.sql
+│   │   │   │   │   ├── Norsk.sql
+│   │   │   │   │   ├── NorSMB.sql
+│   │   │   │   │   ├── Noyes.sql
+│   │   │   │   │   ├── OEB.sql
+│   │   │   │   │   ├── OEBcth.sql
+│   │   │   │   │   ├── Peshitta.sql
+│   │   │   │   │   ├── PohnOld.sql
+│   │   │   │   │   ├── PolGdanska.sql
+│   │   │   │   │   ├── PolUGdanska.sql
+│   │   │   │   │   ├── PorBLivre.sql
+│   │   │   │   │   ├── PorBLivreTR.sql
+│   │   │   │   │   ├── PorNVA.sql
+│   │   │   │   │   ├── RLT.sql
+│   │   │   │   │   ├── RNKJV.sql
+│   │   │   │   │   ├── Rotherham.sql
+│   │   │   │   │   ├── RusMakarij.sql
+│   │   │   │   │   ├── RusSynodal.sql
+│   │   │   │   │   ├── RWebster.sql
+│   │   │   │   │   ├── SloChraska.sql
+│   │   │   │   │   ├── SloKJV.sql
+│   │   │   │   │   ├── SloOjacano.sql
+│   │   │   │   │   ├── SloStritar.sql
+│   │   │   │   │   ├── sml_BL_2008.sql
+│   │   │   │   │   ├── SP.sql
+│   │   │   │   │   ├── SpaPlatense.sql
+│   │   │   │   │   ├── SpaRV.sql
+│   │   │   │   │   ├── SpaRV1865.sql
+│   │   │   │   │   ├── SpaRVG.sql
+│   │   │   │   │   ├── SrKDEkavski.sql
+│   │   │   │   │   ├── SrKDIjekav.sql
+│   │   │   │   │   ├── StatResGNT.sql
+│   │   │   │   │   ├── Swe1917.sql
+│   │   │   │   │   ├── SweKarlXII.sql
+│   │   │   │   │   ├── SweKarlXII1873.sql
+│   │   │   │   │   ├── TagAngBiblia.sql
+│   │   │   │   │   ├── Tausug.sql
+│   │   │   │   │   ├── ThaiKJV.sql
+│   │   │   │   │   ├── TpiKJPB.sql
+│   │   │   │   │   ├── TR.sql
+│   │   │   │   │   ├── Twenty.sql
+│   │   │   │   │   ├── Tyndale.sql
+│   │   │   │   │   ├── UKJV.sql
+│   │   │   │   │   ├── UkrOgienko.sql
+│   │   │   │   │   ├── Viet.sql
+│   │   │   │   │   ├── vlsJoNT.sql
+│   │   │   │   │   ├── Vulgate.sql
+│   │   │   │   │   ├── VulgClementine.sql
+│   │   │   │   │   ├── VulgConte.sql
+│   │   │   │   │   ├── VulgHetzenauer.sql
+│   │   │   │   │   ├── VulgSistine.sql
+│   │   │   │   │   ├── Webster.sql
+│   │   │   │   │   ├── WLC.sql
+│   │   │   │   │   ├── Wulfila.sql
+│   │   │   │   │   ├── Wycliffe.sql
+│   │   │   │   │   └── YLT.sql
+│   │   │   │   ├── sqlite
+│   │   │   │   │   ├── ACV.db
+│   │   │   │   │   ├── AKJV.db
+│   │   │   │   │   ├── Alb.db
+│   │   │   │   │   ├── Anderson.db
+│   │   │   │   │   ├── ArmEastern.db
+│   │   │   │   │   ├── ASV.db
+│   │   │   │   │   ├── BBE.db
+│   │   │   │   │   ├── BeaMRK.db
+│   │   │   │   │   ├── BSB.db
+│   │   │   │   │   ├── BurJudson.db
+│   │   │   │   │   ├── Byz.db
+│   │   │   │   │   ├── CebPinadayag.db
+│   │   │   │   │   ├── Che1860.db
+│   │   │   │   │   ├── ChiSB.db
+│   │   │   │   │   ├── ChiUn.db
+│   │   │   │   │   ├── ChiUnL.db
+│   │   │   │   │   ├── CopSahBible2.db
+│   │   │   │   │   ├── CPDV.db
+│   │   │   │   │   ├── CroSaric.db
+│   │   │   │   │   ├── CSlElizabeth.db
+│   │   │   │   │   ├── CzeBKR.db
+│   │   │   │   │   ├── CzeCSP.db
+│   │   │   │   │   ├── DaOT1871NT1907.db
+│   │   │   │   │   ├── Darby.db
+│   │   │   │   │   ├── DRC.db
+│   │   │   │   │   ├── DutSVV.db
+│   │   │   │   │   ├── DutSVVA.db
+│   │   │   │   │   ├── Esperanto.db
+│   │   │   │   │   ├── Est.db
+│   │   │   │   │   ├── extras
+│   │   │   │   │   │   ├── cross_references_0.db
+│   │   │   │   │   │   ├── cross_references_1.db
+│   │   │   │   │   │   ├── cross_references_2.db
+│   │   │   │   │   │   ├── cross_references_3.db
+│   │   │   │   │   │   ├── cross_references_4.db
+│   │   │   │   │   │   ├── cross_references_5.db
+│   │   │   │   │   │   └── cross_references_6.db
+│   │   │   │   │   ├── FinBiblia.db
+│   │   │   │   │   ├── FinPR.db
+│   │   │   │   │   ├── FinSTLK2017.db
+│   │   │   │   │   ├── FreBBB.db
+│   │   │   │   │   ├── FreBDM1744.db
+│   │   │   │   │   ├── FreCrampon.db
+│   │   │   │   │   ├── FreGeneve1669.db
+│   │   │   │   │   ├── FreJND.db
+│   │   │   │   │   ├── FreLXX.db
+│   │   │   │   │   ├── FreLXXGiguet.db
+│   │   │   │   │   ├── FreOltramare1874.db
+│   │   │   │   │   ├── FrePGR.db
+│   │   │   │   │   ├── FreStapfer1889.db
+│   │   │   │   │   ├── FreSynodale1921.db
+│   │   │   │   │   ├── Geneva1599.db
+│   │   │   │   │   ├── GerAlbrecht.db
+│   │   │   │   │   ├── GerBoLut.db
+│   │   │   │   │   ├── GerElb1871.db
+│   │   │   │   │   ├── GerElb1905.db
+│   │   │   │   │   ├── GerGruenewald.db
+│   │   │   │   │   ├── GerLeoNA28.db
+│   │   │   │   │   ├── GerMenge.db
+│   │   │   │   │   ├── GerOffBiSt.db
+│   │   │   │   │   ├── GerSch.db
+│   │   │   │   │   ├── GerTafel.db
+│   │   │   │   │   ├── GerTextbibel.db
+│   │   │   │   │   ├── GerZurcher.db
+│   │   │   │   │   ├── GreVamvas.db
+│   │   │   │   │   ├── Haitian.db
+│   │   │   │   │   ├── Haweis.db
+│   │   │   │   │   ├── HebModern.db
+│   │   │   │   │   ├── HunKar.db
+│   │   │   │   │   ├── JapBungo.db
+│   │   │   │   │   ├── JapDenmo.db
+│   │   │   │   │   ├── JapKougo.db
+│   │   │   │   │   ├── JPS.db
+│   │   │   │   │   ├── Jubilee2000.db
+│   │   │   │   │   ├── KJV.db
+│   │   │   │   │   ├── KJVA.db
+│   │   │   │   │   ├── KJVPCE.db
+│   │   │   │   │   ├── KLV.db
+│   │   │   │   │   ├── KorHKJV.db
+│   │   │   │   │   ├── KorRV.db
+│   │   │   │   │   ├── LEB.db
+│   │   │   │   │   ├── LITV.db
+│   │   │   │   │   ├── LvGluck8.db
+│   │   │   │   │   ├── Mal1910.db
+│   │   │   │   │   ├── ManxGaelic.db
+│   │   │   │   │   ├── Maori.db
+│   │   │   │   │   ├── MapM.db
+│   │   │   │   │   ├── Mg1865.db
+│   │   │   │   │   ├── MKJV.db
+│   │   │   │   │   ├── NHEB.db
+│   │   │   │   │   ├── NHEBJE.db
+│   │   │   │   │   ├── NHEBME.db
+│   │   │   │   │   ├── NlCanisius1939.db
+│   │   │   │   │   ├── Norsk.db
+│   │   │   │   │   ├── NorSMB.db
+│   │   │   │   │   ├── Noyes.db
+│   │   │   │   │   ├── OEB.db
+│   │   │   │   │   ├── OEBcth.db
+│   │   │   │   │   ├── Peshitta.db
+│   │   │   │   │   ├── PohnOld.db
+│   │   │   │   │   ├── PolGdanska.db
+│   │   │   │   │   ├── PolUGdanska.db
+│   │   │   │   │   ├── PorBLivre.db
+│   │   │   │   │   ├── PorBLivreTR.db
+│   │   │   │   │   ├── PorNVA.db
+│   │   │   │   │   ├── RLT.db
+│   │   │   │   │   ├── RNKJV.db
+│   │   │   │   │   ├── Rotherham.db
+│   │   │   │   │   ├── RusMakarij.db
+│   │   │   │   │   ├── RusSynodal.db
+│   │   │   │   │   ├── RWebster.db
+│   │   │   │   │   ├── SloChraska.db
+│   │   │   │   │   ├── SloKJV.db
+│   │   │   │   │   ├── SloOjacano.db
+│   │   │   │   │   ├── SloStritar.db
+│   │   │   │   │   ├── sml_BL_2008.db
+│   │   │   │   │   ├── SP.db
+│   │   │   │   │   ├── SpaPlatense.db
+│   │   │   │   │   ├── SpaRV.db
+│   │   │   │   │   ├── SpaRV1865.db
+│   │   │   │   │   ├── SpaRVG.db
+│   │   │   │   │   ├── SrKDEkavski.db
+│   │   │   │   │   ├── SrKDIjekav.db
+│   │   │   │   │   ├── StatResGNT.db
+│   │   │   │   │   ├── Swe1917.db
+│   │   │   │   │   ├── SweKarlXII.db
+│   │   │   │   │   ├── SweKarlXII1873.db
+│   │   │   │   │   ├── TagAngBiblia.db
+│   │   │   │   │   ├── Tausug.db
+│   │   │   │   │   ├── ThaiKJV.db
+│   │   │   │   │   ├── TpiKJPB.db
+│   │   │   │   │   ├── TR.db
+│   │   │   │   │   ├── Twenty.db
+│   │   │   │   │   ├── Tyndale.db
+│   │   │   │   │   ├── UKJV.db
+│   │   │   │   │   ├── UkrOgienko.db
+│   │   │   │   │   ├── Viet.db
+│   │   │   │   │   ├── vlsJoNT.db
+│   │   │   │   │   ├── Vulgate.db
+│   │   │   │   │   ├── VulgClementine.db
+│   │   │   │   │   ├── VulgConte.db
+│   │   │   │   │   ├── VulgHetzenauer.db
+│   │   │   │   │   ├── VulgSistine.db
+│   │   │   │   │   ├── Webster.db
+│   │   │   │   │   ├── WLC.db
+│   │   │   │   │   ├── Wulfila.db
+│   │   │   │   │   ├── Wycliffe.db
+│   │   │   │   │   └── YLT.db
+│   │   │   │   ├── txt
+│   │   │   │   │   ├── ACV.txt
+│   │   │   │   │   ├── AKJV.txt
+│   │   │   │   │   ├── Alb.txt
+│   │   │   │   │   ├── Anderson.txt
+│   │   │   │   │   ├── ArmEastern.txt
+│   │   │   │   │   ├── ASV.txt
+│   │   │   │   │   ├── BBE.txt
+│   │   │   │   │   ├── BeaMRK.txt
+│   │   │   │   │   ├── BSB.txt
+│   │   │   │   │   ├── BurJudson.txt
+│   │   │   │   │   ├── Byz.txt
+│   │   │   │   │   ├── CebPinadayag.txt
+│   │   │   │   │   ├── Che1860.txt
+│   │   │   │   │   ├── ChiSB.txt
+│   │   │   │   │   ├── ChiUn.txt
+│   │   │   │   │   ├── ChiUnL.txt
+│   │   │   │   │   ├── CopSahBible2.txt
+│   │   │   │   │   ├── CPDV.txt
+│   │   │   │   │   ├── CroSaric.txt
+│   │   │   │   │   ├── CSlElizabeth.txt
+│   │   │   │   │   ├── CzeBKR.txt
+│   │   │   │   │   ├── CzeCSP.txt
+│   │   │   │   │   ├── DaOT1871NT1907.txt
+│   │   │   │   │   ├── Darby.txt
+│   │   │   │   │   ├── DRC.txt
+│   │   │   │   │   ├── DutSVV.txt
+│   │   │   │   │   ├── DutSVVA.txt
+│   │   │   │   │   ├── Esperanto.txt
+│   │   │   │   │   ├── Est.txt
+│   │   │   │   │   ├── FinBiblia.txt
+│   │   │   │   │   ├── FinPR.txt
+│   │   │   │   │   ├── FinSTLK2017.txt
+│   │   │   │   │   ├── FreBBB.txt
+│   │   │   │   │   ├── FreBDM1744.txt
+│   │   │   │   │   ├── FreCrampon.txt
+│   │   │   │   │   ├── FreGeneve1669.txt
+│   │   │   │   │   ├── FreJND.txt
+│   │   │   │   │   ├── FreLXX.txt
+│   │   │   │   │   ├── FreLXXGiguet.txt
+│   │   │   │   │   ├── FreOltramare1874.txt
+│   │   │   │   │   ├── FrePGR.txt
+│   │   │   │   │   ├── FreStapfer1889.txt
+│   │   │   │   │   ├── FreSynodale1921.txt
+│   │   │   │   │   ├── Geneva1599.txt
+│   │   │   │   │   ├── GerAlbrecht.txt
+│   │   │   │   │   ├── GerBoLut.txt
+│   │   │   │   │   ├── GerElb1871.txt
+│   │   │   │   │   ├── GerElb1905.txt
+│   │   │   │   │   ├── GerGruenewald.txt
+│   │   │   │   │   ├── GerLeoNA28.txt
+│   │   │   │   │   ├── GerMenge.txt
+│   │   │   │   │   ├── GerOffBiSt.txt
+│   │   │   │   │   ├── GerSch.txt
+│   │   │   │   │   ├── GerTafel.txt
+│   │   │   │   │   ├── GerTextbibel.txt
+│   │   │   │   │   ├── GerZurcher.txt
+│   │   │   │   │   ├── GreVamvas.txt
+│   │   │   │   │   ├── Haitian.txt
+│   │   │   │   │   ├── Haweis.txt
+│   │   │   │   │   ├── HebModern.txt
+│   │   │   │   │   ├── HunKar.txt
+│   │   │   │   │   ├── JapBungo.txt
+│   │   │   │   │   ├── JapDenmo.txt
+│   │   │   │   │   ├── JapKougo.txt
+│   │   │   │   │   ├── JPS.txt
+│   │   │   │   │   ├── Jubilee2000.txt
+│   │   │   │   │   ├── KJV.txt
+│   │   │   │   │   ├── KJVA.txt
+│   │   │   │   │   ├── KJVPCE.txt
+│   │   │   │   │   ├── KLV.txt
+│   │   │   │   │   ├── KorHKJV.txt
+│   │   │   │   │   ├── KorRV.txt
+│   │   │   │   │   ├── LEB.txt
+│   │   │   │   │   ├── LITV.txt
+│   │   │   │   │   ├── LvGluck8.txt
+│   │   │   │   │   ├── Mal1910.txt
+│   │   │   │   │   ├── ManxGaelic.txt
+│   │   │   │   │   ├── Maori.txt
+│   │   │   │   │   ├── MapM.txt
+│   │   │   │   │   ├── Mg1865.txt
+│   │   │   │   │   ├── MKJV.txt
+│   │   │   │   │   ├── NHEB.txt
+│   │   │   │   │   ├── NHEBJE.txt
+│   │   │   │   │   ├── NHEBME.txt
+│   │   │   │   │   ├── NlCanisius1939.txt
+│   │   │   │   │   ├── Norsk.txt
+│   │   │   │   │   ├── NorSMB.txt
+│   │   │   │   │   ├── Noyes.txt
+│   │   │   │   │   ├── OEB.txt
+│   │   │   │   │   ├── OEBcth.txt
+│   │   │   │   │   ├── Peshitta.txt
+│   │   │   │   │   ├── PohnOld.txt
+│   │   │   │   │   ├── PolGdanska.txt
+│   │   │   │   │   ├── PolUGdanska.txt
+│   │   │   │   │   ├── PorBLivre.txt
+│   │   │   │   │   ├── PorBLivreTR.txt
+│   │   │   │   │   ├── PorNVA.txt
+│   │   │   │   │   ├── RLT.txt
+│   │   │   │   │   ├── RNKJV.txt
+│   │   │   │   │   ├── Rotherham.txt
+│   │   │   │   │   ├── RusMakarij.txt
+│   │   │   │   │   ├── RusSynodal.txt
+│   │   │   │   │   ├── RWebster.txt
+│   │   │   │   │   ├── SloChraska.txt
+│   │   │   │   │   ├── SloKJV.txt
+│   │   │   │   │   ├── SloOjacano.txt
+│   │   │   │   │   ├── SloStritar.txt
+│   │   │   │   │   ├── sml_BL_2008.txt
+│   │   │   │   │   ├── SP.txt
+│   │   │   │   │   ├── SpaPlatense.txt
+│   │   │   │   │   ├── SpaRV.txt
+│   │   │   │   │   ├── SpaRV1865.txt
+│   │   │   │   │   ├── SpaRVG.txt
+│   │   │   │   │   ├── SrKDEkavski.txt
+│   │   │   │   │   ├── SrKDIjekav.txt
+│   │   │   │   │   ├── StatResGNT.txt
+│   │   │   │   │   ├── Swe1917.txt
+│   │   │   │   │   ├── SweKarlXII.txt
+│   │   │   │   │   ├── SweKarlXII1873.txt
+│   │   │   │   │   ├── TagAngBiblia.txt
+│   │   │   │   │   ├── Tausug.txt
+│   │   │   │   │   ├── ThaiKJV.txt
+│   │   │   │   │   ├── TpiKJPB.txt
+│   │   │   │   │   ├── TR.txt
+│   │   │   │   │   ├── Twenty.txt
+│   │   │   │   │   ├── Tyndale.txt
+│   │   │   │   │   ├── UKJV.txt
+│   │   │   │   │   ├── UkrOgienko.txt
+│   │   │   │   │   ├── Viet.txt
+│   │   │   │   │   ├── vlsJoNT.txt
+│   │   │   │   │   ├── Vulgate.txt
+│   │   │   │   │   ├── VulgClementine.txt
+│   │   │   │   │   ├── VulgConte.txt
+│   │   │   │   │   ├── VulgHetzenauer.txt
+│   │   │   │   │   ├── VulgSistine.txt
+│   │   │   │   │   ├── Webster.txt
+│   │   │   │   │   ├── WLC.txt
+│   │   │   │   │   ├── Wulfila.txt
+│   │   │   │   │   ├── Wycliffe.txt
+│   │   │   │   │   └── YLT.txt
+│   │   │   │   └── yaml
+│   │   │   │       ├── ACV.yaml
+│   │   │   │       ├── AKJV.yaml
+│   │   │   │       ├── Alb.yaml
+│   │   │   │       ├── Anderson.yaml
+│   │   │   │       ├── ArmEastern.yaml
+│   │   │   │       ├── ASV.yaml
+│   │   │   │       ├── BBE.yaml
+│   │   │   │       ├── BeaMRK.yaml
+│   │   │   │       ├── BSB.yaml
+│   │   │   │       ├── BurJudson.yaml
+│   │   │   │       ├── Byz.yaml
+│   │   │   │       ├── CebPinadayag.yaml
+│   │   │   │       ├── Che1860.yaml
+│   │   │   │       ├── ChiSB.yaml
+│   │   │   │       ├── ChiUn.yaml
+│   │   │   │       ├── ChiUnL.yaml
+│   │   │   │       ├── CopSahBible2.yaml
+│   │   │   │       ├── CPDV.yaml
+│   │   │   │       ├── CroSaric.yaml
+│   │   │   │       ├── CSlElizabeth.yaml
+│   │   │   │       ├── CzeBKR.yaml
+│   │   │   │       ├── CzeCSP.yaml
+│   │   │   │       ├── DaOT1871NT1907.yaml
+│   │   │   │       ├── Darby.yaml
+│   │   │   │       ├── DRC.yaml
+│   │   │   │       ├── DutSVV.yaml
+│   │   │   │       ├── DutSVVA.yaml
+│   │   │   │       ├── Esperanto.yaml
+│   │   │   │       ├── Est.yaml
+│   │   │   │       ├── FinBiblia.yaml
+│   │   │   │       ├── FinPR.yaml
+│   │   │   │       ├── FinSTLK2017.yaml
+│   │   │   │       ├── FreBBB.yaml
+│   │   │   │       ├── FreBDM1744.yaml
+│   │   │   │       ├── FreCrampon.yaml
+│   │   │   │       ├── FreGeneve1669.yaml
+│   │   │   │       ├── FreJND.yaml
+│   │   │   │       ├── FreLXX.yaml
+│   │   │   │       ├── FreLXXGiguet.yaml
+│   │   │   │       ├── FreOltramare1874.yaml
+│   │   │   │       ├── FrePGR.yaml
+│   │   │   │       ├── FreStapfer1889.yaml
+│   │   │   │       ├── FreSynodale1921.yaml
+│   │   │   │       ├── Geneva1599.yaml
+│   │   │   │       ├── GerAlbrecht.yaml
+│   │   │   │       ├── GerBoLut.yaml
+│   │   │   │       ├── GerElb1871.yaml
+│   │   │   │       ├── GerElb1905.yaml
+│   │   │   │       ├── GerGruenewald.yaml
+│   │   │   │       ├── GerLeoNA28.yaml
+│   │   │   │       ├── GerMenge.yaml
+│   │   │   │       ├── GerOffBiSt.yaml
+│   │   │   │       ├── GerSch.yaml
+│   │   │   │       ├── GerTafel.yaml
+│   │   │   │       ├── GerTextbibel.yaml
+│   │   │   │       ├── GerZurcher.yaml
+│   │   │   │       ├── GreVamvas.yaml
+│   │   │   │       ├── Haitian.yaml
+│   │   │   │       ├── Haweis.yaml
+│   │   │   │       ├── HebModern.yaml
+│   │   │   │       ├── HunKar.yaml
+│   │   │   │       ├── JapBungo.yaml
+│   │   │   │       ├── JapDenmo.yaml
+│   │   │   │       ├── JapKougo.yaml
+│   │   │   │       ├── JPS.yaml
+│   │   │   │       ├── Jubilee2000.yaml
+│   │   │   │       ├── KJV.yaml
+│   │   │   │       ├── KJVA.yaml
+│   │   │   │       ├── KJVPCE.yaml
+│   │   │   │       ├── KLV.yaml
+│   │   │   │       ├── KorHKJV.yaml
+│   │   │   │       ├── KorRV.yaml
+│   │   │   │       ├── LEB.yaml
+│   │   │   │       ├── LITV.yaml
+│   │   │   │       ├── LvGluck8.yaml
+│   │   │   │       ├── Mal1910.yaml
+│   │   │   │       ├── ManxGaelic.yaml
+│   │   │   │       ├── Maori.yaml
+│   │   │   │       ├── MapM.yaml
+│   │   │   │       ├── Mg1865.yaml
+│   │   │   │       ├── MKJV.yaml
+│   │   │   │       ├── NHEB.yaml
+│   │   │   │       ├── NHEBJE.yaml
+│   │   │   │       ├── NHEBME.yaml
+│   │   │   │       ├── NlCanisius1939.yaml
+│   │   │   │       ├── Norsk.yaml
+│   │   │   │       ├── NorSMB.yaml
+│   │   │   │       ├── Noyes.yaml
+│   │   │   │       ├── OEB.yaml
+│   │   │   │       ├── OEBcth.yaml
+│   │   │   │       ├── Peshitta.yaml
+│   │   │   │       ├── PohnOld.yaml
+│   │   │   │       ├── PolGdanska.yaml
+│   │   │   │       ├── PolUGdanska.yaml
+│   │   │   │       ├── PorBLivre.yaml
+│   │   │   │       ├── PorBLivreTR.yaml
+│   │   │   │       ├── PorNVA.yaml
+│   │   │   │       ├── RLT.yaml
+│   │   │   │       ├── RNKJV.yaml
+│   │   │   │       ├── Rotherham.yaml
+│   │   │   │       ├── RusMakarij.yaml
+│   │   │   │       ├── RusSynodal.yaml
+│   │   │   │       ├── RWebster.yaml
+│   │   │   │       ├── SloChraska.yaml
+│   │   │   │       ├── SloKJV.yaml
+│   │   │   │       ├── SloOjacano.yaml
+│   │   │   │       ├── SloStritar.yaml
+│   │   │   │       ├── sml_BL_2008.yaml
+│   │   │   │       ├── SP.yaml
+│   │   │   │       ├── SpaPlatense.yaml
+│   │   │   │       ├── SpaRV.yaml
+│   │   │   │       ├── SpaRV1865.yaml
+│   │   │   │       ├── SpaRVG.yaml
+│   │   │   │       ├── SrKDEkavski.yaml
+│   │   │   │       ├── SrKDIjekav.yaml
+│   │   │   │       ├── StatResGNT.yaml
+│   │   │   │       ├── Swe1917.yaml
+│   │   │   │       ├── SweKarlXII.yaml
+│   │   │   │       ├── SweKarlXII1873.yaml
+│   │   │   │       ├── TagAngBiblia.yaml
+│   │   │   │       ├── Tausug.yaml
+│   │   │   │       ├── ThaiKJV.yaml
+│   │   │   │       ├── TpiKJPB.yaml
+│   │   │   │       ├── TR.yaml
+│   │   │   │       ├── Twenty.yaml
+│   │   │   │       ├── Tyndale.yaml
+│   │   │   │       ├── UKJV.yaml
+│   │   │   │       ├── UkrOgienko.yaml
+│   │   │   │       ├── Viet.yaml
+│   │   │   │       ├── vlsJoNT.yaml
+│   │   │   │       ├── Vulgate.yaml
+│   │   │   │       ├── VulgClementine.yaml
+│   │   │   │       ├── VulgConte.yaml
+│   │   │   │       ├── VulgHetzenauer.yaml
+│   │   │   │       ├── VulgSistine.yaml
+│   │   │   │       ├── Webster.yaml
+│   │   │   │       ├── WLC.yaml
+│   │   │   │       ├── Wulfila.yaml
+│   │   │   │       ├── Wycliffe.yaml
+│   │   │   │       └── YLT.yaml
+│   │   │   ├── generators
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   └── base_generator.cpython-312.pyc
+│   │   │   │   ├── base_generator.py
+│   │   │   │   ├── json
+│   │   │   │   │   ├── __pycache__
+│   │   │   │   │   │   └── json_generator.cpython-312.pyc
+│   │   │   │   │   └── json_generator.py
+│   │   │   │   ├── parquet
+│   │   │   │   │   └── parquet_generator.py
+│   │   │   │   ├── postgresql
+│   │   │   │   │   ├── cross_references_generator_psql.py
+│   │   │   │   │   └── postgresql_generator.py
+│   │   │   │   ├── sql
+│   │   │   │   │   ├── __pycache__
+│   │   │   │   │   │   ├── cross_references_generator_mysql.cpython-312.pyc
+│   │   │   │   │   │   └── mysql_generator.cpython-312.pyc
+│   │   │   │   │   ├── cross_references_generator_mysql.py
+│   │   │   │   │   └── mysql_generator.py
+│   │   │   │   ├── sqlite
+│   │   │   │   │   ├── __pycache__
+│   │   │   │   │   │   ├── cross_references_generator_sqlite.cpython-312.pyc
+│   │   │   │   │   │   └── sqlite_generator.cpython-312.pyc
+│   │   │   │   │   └── sqlite_generator.py
+│   │   │   │   └── text
+│   │   │   │       ├── __pycache__
+│   │   │   │       │   ├── cross_references_generator.cpython-312.pyc
+│   │   │   │       │   ├── csv_generator.cpython-312.pyc
+│   │   │   │       │   ├── markdown_generator.cpython-312.pyc
+│   │   │   │       │   ├── plaintext_generator.cpython-312.pyc
+│   │   │   │       │   └── yaml_generator.cpython-312.pyc
+│   │   │   │       ├── cross_references_generator.py
+│   │   │   │       ├── csv_generator.py
+│   │   │   │       ├── markdown_generator.py
+│   │   │   │       ├── plaintext_generator.py
+│   │   │   │       ├── README.md
+│   │   │   │       └── yaml_generator.py
+│   │   │   ├── LICENSE
+│   │   │   ├── misc
+│   │   │   │   └── extraction_errors
+│   │   │   │       ├── _Aleppo
+│   │   │   │       │   ├── Aleppo.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Antoniades
+│   │   │   │       │   ├── Antoniades.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _ArmWestern
+│   │   │   │       │   ├── ArmWestern.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _BasHautin
+│   │   │   │       │   ├── BasHautin.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Calo
+│   │   │   │       │   ├── Calo.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Common
+│   │   │   │       │   ├── Common.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _CopNT
+│   │   │   │       │   ├── CopNT.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _CopSahHorner
+│   │   │   │       │   ├── CopSahHorner.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _CopSahidica
+│   │   │   │       │   ├── CopSahidica.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _CopSahidicMSS
+│   │   │   │       │   ├── CopSahidicMSS.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _DaNT1819
+│   │   │   │       │   ├── DaNT1819.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Elzevir
+│   │   │   │       │   ├── Elzevir.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Etheridge
+│   │   │   │       │   ├── Etheridge.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _f35
+│   │   │   │       │   ├── f35.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _FreKhan
+│   │   │   │       │   ├── FreKhan.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Geez
+│   │   │   │       │   ├── Geez.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _GerLeoRP18
+│   │   │   │       │   ├── GerLeoRP18.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _GerReinhardt
+│   │   │   │       │   ├── GerReinhardt.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Godbey
+│   │   │   │       │   ├── Godbey.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _HunIMIT
+│   │   │   │       │   ├── HunIMIT.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _IriODomhnuill
+│   │   │   │       │   ├── IriODomhnuill.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _JapRaguet
+│   │   │   │       │   ├── JapRaguet.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Latvian
+│   │   │   │       │   ├── Latvian.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _LO
+│   │   │   │       │   ├── LO.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _LXX
+│   │   │   │       │   ├── LXX.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Montgomery
+│   │   │   │       │   ├── Montgomery.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Murdock
+│   │   │   │       │   ├── Murdock.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _Nestle1904
+│   │   │   │       │   ├── Nestle1904.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _OSHB
+│   │   │   │       │   ├── OSHB.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _OxfordTR
+│   │   │   │       │   ├── OxfordTR.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _PotLykins
+│   │   │   │       │   ├── PotLykins.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       ├── _RKJNT
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── RKJNT.zip
+│   │   │   │       ├── _SBLGNT
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── SBLGNT.zip
+│   │   │   │       ├── _ScotsGaelic
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── ScotsGaelic.zip
+│   │   │   │       ├── _SpaTDP
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── SpaTDP.zip
+│   │   │   │       ├── _SpaVNT
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── SpaVNT.zip
+│   │   │   │       ├── _SPDSS
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── SPDSS.zip
+│   │   │   │       ├── _SPE
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── SPE.zip
+│   │   │   │       ├── _SPMT
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── SPMT.zip
+│   │   │   │       ├── _SPVar
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── SPVar.zip
+│   │   │   │       ├── _Swahili
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── Swahili.zip
+│   │   │   │       ├── _Tagalog
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── Tagalog.zip
+│   │   │   │       ├── _Tisch
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── Tisch.zip
+│   │   │   │       ├── _TNT
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── TNT.zip
+│   │   │   │       ├── _UkrKulish
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── UkrKulish.zip
+│   │   │   │       ├── _Uma
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── Uma.zip
+│   │   │   │       ├── _Vulgate_HebPs
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── Vulgate_HebPs.zip
+│   │   │   │       ├── _Weymouth
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── Weymouth.zip
+│   │   │   │       ├── _WHNU
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── WHNU.zip
+│   │   │   │       ├── _Worsley
+│   │   │   │       │   ├── README.md
+│   │   │   │       │   └── Worsley.zip
+│   │   │   │       └── README.md
+│   │   │   ├── README.md
+│   │   │   ├── requirements.txt
+│   │   │   ├── scripts
+│   │   │   │   ├── assemble_readme.py
+│   │   │   │   ├── build_mysql_database.py
+│   │   │   │   ├── export_sqlite_database.py
+│   │   │   │   ├── extract_esword_zips.py
+│   │   │   │   ├── generate_all_versions.py
+│   │   │   │   ├── generate_cross_references_mysql.py
+│   │   │   │   ├── generate_cross_references_psql.py
+│   │   │   │   ├── generate_cross_references.py
+│   │   │   │   ├── generate_csv.py
+│   │   │   │   ├── generate_json.py
+│   │   │   │   ├── generate_md.py
+│   │   │   │   ├── generate_mysql.py
+│   │   │   │   ├── generate_parquet.py
+│   │   │   │   ├── generate_postgresql.py
+│   │   │   │   ├── generate_sqlite.py
+│   │   │   │   ├── generate_txt.py
+│   │   │   │   ├── generate_yaml.py
+│   │   │   │   ├── README.md
+│   │   │   │   ├── sword_to_json.py
+│   │   │   │   ├── verify_plain_text_markup.py
+│   │   │   │   ├── verify_text_integrity_csv.py
+│   │   │   │   ├── verify_text_integrity_json.py
+│   │   │   │   ├── verify_text_integrity_md.py
+│   │   │   │   ├── verify_text_integrity_mysql.py
+│   │   │   │   ├── verify_text_integrity_txt.py
+│   │   │   │   └── verify_text_integrity_yaml.py
+│   │   │   ├── sources
+│   │   │   │   ├── bea
+│   │   │   │   │   └── BeaMRK
+│   │   │   │   │       ├── BeaMRK-osis.json
+│   │   │   │   │       ├── BeaMRK.json
+│   │   │   │   │       ├── BeaMRK.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── ceb
+│   │   │   │   │   └── CebPinadayag
+│   │   │   │   │       ├── CebPinadayag-osis.json
+│   │   │   │   │       ├── CebPinadayag.json
+│   │   │   │   │       ├── CebPinadayag.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── chr
+│   │   │   │   │   └── Che1860
+│   │   │   │   │       ├── Che1860-osis.json
+│   │   │   │   │       ├── Che1860.json
+│   │   │   │   │       ├── Che1860.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── cop-sa
+│   │   │   │   │   └── CopSahBible2
+│   │   │   │   │       ├── CopSahBible2-osis.json
+│   │   │   │   │       ├── CopSahBible2.json
+│   │   │   │   │       ├── CopSahBible2.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── cs
+│   │   │   │   │   ├── CzeBKR
+│   │   │   │   │   │   ├── CzeBKR-osis.json
+│   │   │   │   │   │   ├── CzeBKR.json
+│   │   │   │   │   │   ├── CzeBKR.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── CzeCSP
+│   │   │   │   │       ├── CzeCSP-osis.json
+│   │   │   │   │       ├── CzeCSP.json
+│   │   │   │   │       ├── CzeCSP.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── cu
+│   │   │   │   │   └── CSlElizabeth
+│   │   │   │   │       ├── CSlElizabeth-osis.json
+│   │   │   │   │       ├── CSlElizabeth.json
+│   │   │   │   │       ├── CSlElizabeth.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── da
+│   │   │   │   │   └── DaOT1871NT1907
+│   │   │   │   │       ├── DaOT1871NT1907-osis.json
+│   │   │   │   │       ├── DaOT1871NT1907.json
+│   │   │   │   │       ├── DaOT1871NT1907.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── de
+│   │   │   │   │   ├── GerAlbrecht
+│   │   │   │   │   │   ├── GerAlbrecht-osis.json
+│   │   │   │   │   │   ├── GerAlbrecht.json
+│   │   │   │   │   │   ├── GerAlbrecht.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerBoLut
+│   │   │   │   │   │   ├── GerBoLut-osis.json
+│   │   │   │   │   │   ├── GerBoLut.json
+│   │   │   │   │   │   ├── GerBoLut.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerElb1871
+│   │   │   │   │   │   ├── GerElb1871-osis.json
+│   │   │   │   │   │   ├── GerElb1871.json
+│   │   │   │   │   │   ├── GerElb1871.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerElb1905
+│   │   │   │   │   │   ├── GerElb1905-osis.json
+│   │   │   │   │   │   ├── GerElb1905.json
+│   │   │   │   │   │   ├── GerElb1905.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerGruenewald
+│   │   │   │   │   │   ├── GerGruenewald-osis.json
+│   │   │   │   │   │   ├── GerGruenewald.json
+│   │   │   │   │   │   ├── GerGruenewald.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerLeoNA28
+│   │   │   │   │   │   ├── GerLeoNA28-osis.json
+│   │   │   │   │   │   ├── GerLeoNA28.json
+│   │   │   │   │   │   ├── GerLeoNA28.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerMenge
+│   │   │   │   │   │   ├── GerMenge-osis.json
+│   │   │   │   │   │   ├── GerMenge.json
+│   │   │   │   │   │   ├── GerMenge.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerOffBiSt
+│   │   │   │   │   │   ├── GerOffBiSt-osis.json
+│   │   │   │   │   │   ├── GerOffBiSt.json
+│   │   │   │   │   │   ├── GerOffBiSt.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerSch
+│   │   │   │   │   │   ├── GerSch-osis.json
+│   │   │   │   │   │   ├── GerSch.json
+│   │   │   │   │   │   ├── GerSch.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerTafel
+│   │   │   │   │   │   ├── GerTafel-osis.json
+│   │   │   │   │   │   ├── GerTafel.json
+│   │   │   │   │   │   ├── GerTafel.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── GerTextbibel
+│   │   │   │   │   │   ├── GerTextbibel-osis.json
+│   │   │   │   │   │   ├── GerTextbibel.json
+│   │   │   │   │   │   ├── GerTextbibel.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── GerZurcher
+│   │   │   │   │       ├── GerZurcher-osis.json
+│   │   │   │   │       ├── GerZurcher.json
+│   │   │   │   │       ├── GerZurcher.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── el
+│   │   │   │   │   └── GreVamvas
+│   │   │   │   │       ├── GreVamvas-osis.json
+│   │   │   │   │       ├── GreVamvas.json
+│   │   │   │   │       ├── GreVamvas.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── en
+│   │   │   │   │   ├── ACV
+│   │   │   │   │   │   ├── ACV-osis.json
+│   │   │   │   │   │   ├── ACV.json
+│   │   │   │   │   │   ├── ACV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── AKJV
+│   │   │   │   │   │   ├── AKJV-osis.json
+│   │   │   │   │   │   ├── AKJV.json
+│   │   │   │   │   │   ├── AKJV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── Anderson
+│   │   │   │   │   │   ├── Anderson-osis.json
+│   │   │   │   │   │   ├── Anderson.json
+│   │   │   │   │   │   ├── Anderson.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── ASV
+│   │   │   │   │   │   ├── ASV-osis.json
+│   │   │   │   │   │   ├── ASV.json
+│   │   │   │   │   │   ├── ASV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── BBE
+│   │   │   │   │   │   ├── BBE-osis.json
+│   │   │   │   │   │   ├── BBE.json
+│   │   │   │   │   │   ├── BBE.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── BSB
+│   │   │   │   │   │   ├── BSB-osis.json
+│   │   │   │   │   │   ├── BSB.json
+│   │   │   │   │   │   ├── BSB.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── CPDV
+│   │   │   │   │   │   ├── CPDV-osis.json
+│   │   │   │   │   │   ├── CPDV.json
+│   │   │   │   │   │   ├── CPDV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── Darby
+│   │   │   │   │   │   ├── Darby-osis.json
+│   │   │   │   │   │   ├── Darby.json
+│   │   │   │   │   │   ├── Darby.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── DRC
+│   │   │   │   │   │   ├── DRC-osis.json
+│   │   │   │   │   │   ├── DRC.json
+│   │   │   │   │   │   ├── DRC.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── Geneva1599
+│   │   │   │   │   │   ├── Geneva1599-osis.json
+│   │   │   │   │   │   ├── Geneva1599.json
+│   │   │   │   │   │   ├── Geneva1599.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── Haweis
+│   │   │   │   │   │   ├── Haweis-osis.json
+│   │   │   │   │   │   ├── Haweis.json
+│   │   │   │   │   │   ├── Haweis.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── JPS
+│   │   │   │   │   │   ├── JPS-osis.json
+│   │   │   │   │   │   ├── JPS.json
+│   │   │   │   │   │   ├── JPS.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── Jubilee2000
+│   │   │   │   │   │   ├── Jubilee2000-osis.json
+│   │   │   │   │   │   ├── Jubilee2000.json
+│   │   │   │   │   │   ├── Jubilee2000.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── KJV
+│   │   │   │   │   │   ├── KJV-osis.json
+│   │   │   │   │   │   ├── KJV.json
+│   │   │   │   │   │   ├── KJV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── KJVA
+│   │   │   │   │   │   ├── KJVA-osis.json
+│   │   │   │   │   │   ├── KJVA.json
+│   │   │   │   │   │   ├── KJVA.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── KJVPCE
+│   │   │   │   │   │   ├── KJVPCE-osis.json
+│   │   │   │   │   │   ├── KJVPCE.json
+│   │   │   │   │   │   ├── KJVPCE.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── LEB
+│   │   │   │   │   │   ├── LEB-osis.json
+│   │   │   │   │   │   ├── LEB.json
+│   │   │   │   │   │   ├── LEB.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── LITV
+│   │   │   │   │   │   ├── LITV-osis.json
+│   │   │   │   │   │   ├── LITV.json
+│   │   │   │   │   │   ├── LITV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── MKJV
+│   │   │   │   │   │   ├── MKJV-osis.json
+│   │   │   │   │   │   ├── MKJV.json
+│   │   │   │   │   │   ├── MKJV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── NHEB
+│   │   │   │   │   │   ├── NHEB-osis.json
+│   │   │   │   │   │   ├── NHEB.json
+│   │   │   │   │   │   ├── NHEB.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── NHEBJE
+│   │   │   │   │   │   ├── NHEBJE-osis.json
+│   │   │   │   │   │   ├── NHEBJE.json
+│   │   │   │   │   │   ├── NHEBJE.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── NHEBME
+│   │   │   │   │   │   ├── NHEBME-osis.json
+│   │   │   │   │   │   ├── NHEBME.json
+│   │   │   │   │   │   ├── NHEBME.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── Noyes
+│   │   │   │   │   │   ├── Noyes-osis.json
+│   │   │   │   │   │   ├── Noyes.json
+│   │   │   │   │   │   ├── Noyes.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── OEB
+│   │   │   │   │   │   ├── OEB-osis.json
+│   │   │   │   │   │   ├── OEB.json
+│   │   │   │   │   │   ├── OEB.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── OEBcth
+│   │   │   │   │   │   ├── OEBcth-osis.json
+│   │   │   │   │   │   ├── OEBcth.json
+│   │   │   │   │   │   ├── OEBcth.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── RLT
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── RLT-osis.json
+│   │   │   │   │   │   ├── RLT.json
+│   │   │   │   │   │   └── RLT.zip
+│   │   │   │   │   ├── RNKJV
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── RNKJV-osis.json
+│   │   │   │   │   │   ├── RNKJV.json
+│   │   │   │   │   │   └── RNKJV.zip
+│   │   │   │   │   ├── Rotherham
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── Rotherham-osis.json
+│   │   │   │   │   │   ├── Rotherham.json
+│   │   │   │   │   │   └── Rotherham.zip
+│   │   │   │   │   ├── RWebster
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── RWebster-osis.json
+│   │   │   │   │   │   ├── RWebster.json
+│   │   │   │   │   │   └── RWebster.zip
+│   │   │   │   │   ├── sources.txt
+│   │   │   │   │   ├── Twenty
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── Twenty-osis.json
+│   │   │   │   │   │   ├── Twenty.json
+│   │   │   │   │   │   └── Twenty.zip
+│   │   │   │   │   ├── Tyndale
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── Tyndale-osis.json
+│   │   │   │   │   │   ├── Tyndale.json
+│   │   │   │   │   │   └── Tyndale.zip
+│   │   │   │   │   ├── UKJV
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── UKJV-osis.json
+│   │   │   │   │   │   ├── UKJV.json
+│   │   │   │   │   │   └── UKJV.zip
+│   │   │   │   │   ├── Webster
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── Webster-osis.json
+│   │   │   │   │   │   ├── Webster.json
+│   │   │   │   │   │   └── Webster.zip
+│   │   │   │   │   └── YLT
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── YLT-osis.json
+│   │   │   │   │       ├── YLT.json
+│   │   │   │   │       └── YLT.zip
+│   │   │   │   ├── enm
+│   │   │   │   │   └── Wycliffe
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── Wycliffe-osis.json
+│   │   │   │   │       ├── Wycliffe.json
+│   │   │   │   │       └── Wycliffe.zip
+│   │   │   │   ├── eo
+│   │   │   │   │   └── Esperanto
+│   │   │   │   │       ├── Esperanto-osis.json
+│   │   │   │   │       ├── Esperanto.json
+│   │   │   │   │       ├── Esperanto.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── es
+│   │   │   │   │   ├── SpaPlatense
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SpaPlatense-osis.json
+│   │   │   │   │   │   ├── SpaPlatense.json
+│   │   │   │   │   │   └── SpaPlatense.zip
+│   │   │   │   │   ├── SpaRV
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SpaRV-osis.json
+│   │   │   │   │   │   ├── SpaRV.json
+│   │   │   │   │   │   └── SpaRV.zip
+│   │   │   │   │   ├── SpaRV1865
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SpaRV1865-osis.json
+│   │   │   │   │   │   ├── SpaRV1865.json
+│   │   │   │   │   │   └── SpaRV1865.zip
+│   │   │   │   │   └── SpaRVG
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── SpaRVG-osis.json
+│   │   │   │   │       ├── SpaRVG.json
+│   │   │   │   │       └── SpaRVG.zip
+│   │   │   │   ├── et
+│   │   │   │   │   └── Est
+│   │   │   │   │       ├── Est-osis.json
+│   │   │   │   │       ├── Est.json
+│   │   │   │   │       ├── Est.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── extras
+│   │   │   │   │   ├── cross_references_0.json
+│   │   │   │   │   ├── cross_references_1.json
+│   │   │   │   │   ├── cross_references_2.json
+│   │   │   │   │   ├── cross_references_3.json
+│   │   │   │   │   ├── cross_references_4.json
+│   │   │   │   │   ├── cross_references_5.json
+│   │   │   │   │   ├── cross_references_6.json
+│   │   │   │   │   └── cross_references.txt
+│   │   │   │   ├── fi
+│   │   │   │   │   ├── FinBiblia
+│   │   │   │   │   │   ├── FinBiblia-osis.json
+│   │   │   │   │   │   ├── FinBiblia.json
+│   │   │   │   │   │   ├── FinBiblia.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FinPR
+│   │   │   │   │   │   ├── FinPR-osis.json
+│   │   │   │   │   │   ├── FinPR.json
+│   │   │   │   │   │   ├── FinPR.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── FinSTLK2017
+│   │   │   │   │       ├── FinSTLK2017-osis.json
+│   │   │   │   │       ├── FinSTLK2017.json
+│   │   │   │   │       ├── FinSTLK2017.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── fr
+│   │   │   │   │   ├── FreBBB
+│   │   │   │   │   │   ├── FreBBB-osis.json
+│   │   │   │   │   │   ├── FreBBB.json
+│   │   │   │   │   │   ├── FreBBB.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreBDM1744
+│   │   │   │   │   │   ├── FreBDM1744-osis.json
+│   │   │   │   │   │   ├── FreBDM1744.json
+│   │   │   │   │   │   ├── FreBDM1744.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreCrampon
+│   │   │   │   │   │   ├── FreCrampon-osis.json
+│   │   │   │   │   │   ├── FreCrampon.json
+│   │   │   │   │   │   ├── FreCrampon.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreGeneve1669
+│   │   │   │   │   │   ├── FreGeneve1669-osis.json
+│   │   │   │   │   │   ├── FreGeneve1669.json
+│   │   │   │   │   │   ├── FreGeneve1669.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreJND
+│   │   │   │   │   │   ├── FreJND-osis.json
+│   │   │   │   │   │   ├── FreJND.json
+│   │   │   │   │   │   ├── FreJND.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreLXX
+│   │   │   │   │   │   ├── FreLXX-osis.json
+│   │   │   │   │   │   ├── FreLXX.json
+│   │   │   │   │   │   ├── FreLXX.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreLXXGiguet
+│   │   │   │   │   │   ├── FreLXXGiguet-osis.json
+│   │   │   │   │   │   ├── FreLXXGiguet.json
+│   │   │   │   │   │   ├── FreLXXGiguet.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreOltramare1874
+│   │   │   │   │   │   ├── FreOltramare1874-osis.json
+│   │   │   │   │   │   ├── FreOltramare1874.json
+│   │   │   │   │   │   ├── FreOltramare1874.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FrePGR
+│   │   │   │   │   │   ├── FrePGR-osis.json
+│   │   │   │   │   │   ├── FrePGR.json
+│   │   │   │   │   │   ├── FrePGR.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── FreStapfer1889
+│   │   │   │   │   │   ├── FreStapfer1889-osis.json
+│   │   │   │   │   │   ├── FreStapfer1889.json
+│   │   │   │   │   │   ├── FreStapfer1889.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── FreSynodale1921
+│   │   │   │   │       ├── FreSynodale1921-osis.json
+│   │   │   │   │       ├── FreSynodale1921.json
+│   │   │   │   │       ├── FreSynodale1921.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── got
+│   │   │   │   │   └── Wulfila
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── Wulfila-osis.json
+│   │   │   │   │       ├── Wulfila.json
+│   │   │   │   │       └── Wulfila.zip
+│   │   │   │   ├── grc
+│   │   │   │   │   ├── Byz
+│   │   │   │   │   │   ├── Byz-osis.json
+│   │   │   │   │   │   ├── Byz.json
+│   │   │   │   │   │   ├── Byz.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── StatResGNT
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── StatResGNT-osis.json
+│   │   │   │   │   │   ├── StatResGNT.json
+│   │   │   │   │   │   └── StatResGNT.zip
+│   │   │   │   │   └── TR
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── TR-osis.json
+│   │   │   │   │       ├── TR.json
+│   │   │   │   │       └── TR.zip
+│   │   │   │   ├── gv
+│   │   │   │   │   └── ManxGaelic
+│   │   │   │   │       ├── ManxGaelic-osis.json
+│   │   │   │   │       ├── ManxGaelic.json
+│   │   │   │   │       ├── ManxGaelic.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── hbo
+│   │   │   │   │   ├── MapM
+│   │   │   │   │   │   ├── MapM-osis.json
+│   │   │   │   │   │   ├── MapM.json
+│   │   │   │   │   │   ├── MapM.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── SP
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SP-osis.json
+│   │   │   │   │   │   ├── SP.json
+│   │   │   │   │   │   └── SP.zip
+│   │   │   │   │   └── WLC
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── WLC-osis.json
+│   │   │   │   │       ├── WLC.json
+│   │   │   │   │       └── WLC.zip
+│   │   │   │   ├── he
+│   │   │   │   │   └── HebModern
+│   │   │   │   │       ├── HebModern-osis.json
+│   │   │   │   │       ├── HebModern.json
+│   │   │   │   │       ├── HebModern.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── hr
+│   │   │   │   │   └── CroSaric
+│   │   │   │   │       ├── CroSaric-osis.json
+│   │   │   │   │       ├── CroSaric.json
+│   │   │   │   │       ├── CroSaric.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── ht
+│   │   │   │   │   └── Haitian
+│   │   │   │   │       ├── Haitian-osis.json
+│   │   │   │   │       ├── Haitian.json
+│   │   │   │   │       ├── Haitian.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── hu
+│   │   │   │   │   └── HunKar
+│   │   │   │   │       ├── HunKar-osis.json
+│   │   │   │   │       ├── HunKar.json
+│   │   │   │   │       ├── HunKar.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── hy
+│   │   │   │   │   └── ArmEastern
+│   │   │   │   │       ├── ArmEastern-osis.json
+│   │   │   │   │       ├── ArmEastern.json
+│   │   │   │   │       ├── ArmEastern.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── ja
+│   │   │   │   │   ├── JapBungo
+│   │   │   │   │   │   ├── JapBungo-osis.json
+│   │   │   │   │   │   ├── JapBungo.json
+│   │   │   │   │   │   ├── JapBungo.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── JapDenmo
+│   │   │   │   │   │   ├── JapDenmo-osis.json
+│   │   │   │   │   │   ├── JapDenmo.json
+│   │   │   │   │   │   ├── JapDenmo.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── JapKougo
+│   │   │   │   │       ├── JapKougo-osis.json
+│   │   │   │   │       ├── JapKougo.json
+│   │   │   │   │       ├── JapKougo.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── ko
+│   │   │   │   │   ├── KorHKJV
+│   │   │   │   │   │   ├── KorHKJV-osis.json
+│   │   │   │   │   │   ├── KorHKJV.json
+│   │   │   │   │   │   ├── KorHKJV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── KorRV
+│   │   │   │   │       ├── KorRV-osis.json
+│   │   │   │   │       ├── KorRV.json
+│   │   │   │   │       ├── KorRV.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── la
+│   │   │   │   │   ├── Vulgate
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── Vulgate-osis.json
+│   │   │   │   │   │   ├── Vulgate.json
+│   │   │   │   │   │   └── Vulgate.zip
+│   │   │   │   │   ├── VulgClementine
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── VulgClementine-osis.json
+│   │   │   │   │   │   ├── VulgClementine.json
+│   │   │   │   │   │   └── VulgClementine.zip
+│   │   │   │   │   ├── VulgConte
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── VulgConte-osis.json
+│   │   │   │   │   │   ├── VulgConte.json
+│   │   │   │   │   │   └── VulgConte.zip
+│   │   │   │   │   ├── VulgHetzenauer
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── VulgHetzenauer-osis.json
+│   │   │   │   │   │   ├── VulgHetzenauer.json
+│   │   │   │   │   │   └── VulgHetzenauer.zip
+│   │   │   │   │   └── VulgSistine
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── VulgSistine-osis.json
+│   │   │   │   │       ├── VulgSistine.json
+│   │   │   │   │       └── VulgSistine.zip
+│   │   │   │   ├── lv
+│   │   │   │   │   └── LvGluck8
+│   │   │   │   │       ├── LvGluck8-osis.json
+│   │   │   │   │       ├── LvGluck8.json
+│   │   │   │   │       ├── LvGluck8.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── lzh
+│   │   │   │   │   └── ChiUnL
+│   │   │   │   │       ├── ChiUnL-osis.json
+│   │   │   │   │       ├── ChiUnL.json
+│   │   │   │   │       ├── ChiUnL.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── mg
+│   │   │   │   │   └── Mg1865
+│   │   │   │   │       ├── Mg1865-osis.json
+│   │   │   │   │       ├── Mg1865.json
+│   │   │   │   │       ├── Mg1865.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── mi
+│   │   │   │   │   └── Maori
+│   │   │   │   │       ├── Maori-osis.json
+│   │   │   │   │       ├── Maori.json
+│   │   │   │   │       ├── Maori.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── ml
+│   │   │   │   │   └── Mal1910
+│   │   │   │   │       ├── Mal1910-osis.json
+│   │   │   │   │       ├── Mal1910.json
+│   │   │   │   │       ├── Mal1910.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── my
+│   │   │   │   │   └── BurJudson
+│   │   │   │   │       ├── BurJudson-osis.json
+│   │   │   │   │       ├── BurJudson.json
+│   │   │   │   │       ├── BurJudson.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── nb
+│   │   │   │   │   └── Norsk
+│   │   │   │   │       ├── Norsk-osis.json
+│   │   │   │   │       ├── Norsk.json
+│   │   │   │   │       ├── Norsk.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── nl
+│   │   │   │   │   ├── DutSVV
+│   │   │   │   │   │   ├── DutSVV-osis.json
+│   │   │   │   │   │   ├── DutSVV.json
+│   │   │   │   │   │   ├── DutSVV.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── DutSVVA
+│   │   │   │   │   │   ├── DutSVVA-osis.json
+│   │   │   │   │   │   ├── DutSVVA.json
+│   │   │   │   │   │   ├── DutSVVA.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── NlCanisius1939
+│   │   │   │   │       ├── NlCanisius1939-osis.json
+│   │   │   │   │       ├── NlCanisius1939.json
+│   │   │   │   │       ├── NlCanisius1939.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── nn
+│   │   │   │   │   └── NorSMB
+│   │   │   │   │       ├── NorSMB-osis.json
+│   │   │   │   │       ├── NorSMB.json
+│   │   │   │   │       ├── NorSMB.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── pl
+│   │   │   │   │   ├── PolGdanska
+│   │   │   │   │   │   ├── PolGdanska-osis.json
+│   │   │   │   │   │   ├── PolGdanska.json
+│   │   │   │   │   │   ├── PolGdanska.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── PolUGdanska
+│   │   │   │   │       ├── PolUGdanska-osis.json
+│   │   │   │   │       ├── PolUGdanska.json
+│   │   │   │   │       ├── PolUGdanska.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── pon
+│   │   │   │   │   └── PohnOld
+│   │   │   │   │       ├── PohnOld-osis.json
+│   │   │   │   │       ├── PohnOld.json
+│   │   │   │   │       ├── PohnOld.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── pt
+│   │   │   │   │   ├── PorBLivre
+│   │   │   │   │   │   ├── PorBLivre-osis.json
+│   │   │   │   │   │   ├── PorBLivre.json
+│   │   │   │   │   │   ├── PorBLivre.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── PorBLivreTR
+│   │   │   │   │   │   ├── PorBLivreTR-osis.json
+│   │   │   │   │   │   ├── PorBLivreTR.json
+│   │   │   │   │   │   ├── PorBLivreTR.zip
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── PorNVA
+│   │   │   │   │       ├── PorNVA-osis.json
+│   │   │   │   │       ├── PorNVA.json
+│   │   │   │   │       ├── PorNVA.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── README.md
+│   │   │   │   ├── ru
+│   │   │   │   │   ├── RusMakarij
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── RusMakarij-osis.json
+│   │   │   │   │   │   ├── RusMakarij.json
+│   │   │   │   │   │   └── RusMakarij.zip
+│   │   │   │   │   └── RusSynodal
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── RusSynodal-osis.json
+│   │   │   │   │       ├── RusSynodal.json
+│   │   │   │   │       └── RusSynodal.zip
+│   │   │   │   ├── sl
+│   │   │   │   │   ├── SloChraska
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SloChraska-osis.json
+│   │   │   │   │   │   ├── SloChraska.json
+│   │   │   │   │   │   └── SloChraska.zip
+│   │   │   │   │   ├── SloKJV
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SloKJV-osis.json
+│   │   │   │   │   │   ├── SloKJV.json
+│   │   │   │   │   │   └── SloKJV.zip
+│   │   │   │   │   ├── SloOjacano
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SloOjacano-osis.json
+│   │   │   │   │   │   ├── SloOjacano.json
+│   │   │   │   │   │   └── SloOjacano.zip
+│   │   │   │   │   └── SloStritar
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── SloStritar-osis.json
+│   │   │   │   │       ├── SloStritar.json
+│   │   │   │   │       └── SloStritar.zip
+│   │   │   │   ├── sml
+│   │   │   │   │   └── sml_BL_2008
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── sml_BL_2008-osis.json
+│   │   │   │   │       ├── sml_BL_2008.json
+│   │   │   │   │       └── sml_BL_2008.zip
+│   │   │   │   ├── sq
+│   │   │   │   │   └── Alb
+│   │   │   │   │       ├── Alb-osis.json
+│   │   │   │   │       ├── Alb.json
+│   │   │   │   │       ├── Alb.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── sr
+│   │   │   │   │   ├── SrKDEkavski
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SrKDEkavski-osis.json
+│   │   │   │   │   │   ├── SrKDEkavski.json
+│   │   │   │   │   │   └── SrKDEkavski.zip
+│   │   │   │   │   └── SrKDIjekav
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── SrKDIjekav-osis.json
+│   │   │   │   │       ├── SrKDIjekav.json
+│   │   │   │   │       └── SrKDIjekav.zip
+│   │   │   │   ├── sv
+│   │   │   │   │   ├── Swe1917
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── Swe1917-osis.json
+│   │   │   │   │   │   ├── Swe1917.json
+│   │   │   │   │   │   └── Swe1917.zip
+│   │   │   │   │   ├── SweKarlXII
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── SweKarlXII-osis.json
+│   │   │   │   │   │   ├── SweKarlXII.json
+│   │   │   │   │   │   └── SweKarlXII.zip
+│   │   │   │   │   └── SweKarlXII1873
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── SweKarlXII1873-osis.json
+│   │   │   │   │       ├── SweKarlXII1873.json
+│   │   │   │   │       └── SweKarlXII1873.zip
+│   │   │   │   ├── syr
+│   │   │   │   │   └── Peshitta
+│   │   │   │   │       ├── Peshitta-osis.json
+│   │   │   │   │       ├── Peshitta.json
+│   │   │   │   │       ├── Peshitta.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── th
+│   │   │   │   │   └── ThaiKJV
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── ThaiKJV-osis.json
+│   │   │   │   │       ├── ThaiKJV.json
+│   │   │   │   │       └── ThaiKJV.zip
+│   │   │   │   ├── tl
+│   │   │   │   │   └── TagAngBiblia
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── TagAngBiblia-osis.json
+│   │   │   │   │       ├── TagAngBiblia.json
+│   │   │   │   │       └── TagAngBiblia.zip
+│   │   │   │   ├── tlh
+│   │   │   │   │   └── KLV
+│   │   │   │   │       ├── KLV-osis.json
+│   │   │   │   │       ├── KLV.json
+│   │   │   │   │       ├── KLV.zip
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── tpi
+│   │   │   │   │   └── TpiKJPB
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── TpiKJPB-osis.json
+│   │   │   │   │       ├── TpiKJPB.json
+│   │   │   │   │       └── TpiKJPB.zip
+│   │   │   │   ├── tsg
+│   │   │   │   │   └── Tausug
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── Tausug-osis.json
+│   │   │   │   │       ├── Tausug.json
+│   │   │   │   │       └── Tausug.zip
+│   │   │   │   ├── uk
+│   │   │   │   │   └── UkrOgienko
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── UkrOgienko-osis.json
+│   │   │   │   │       ├── UkrOgienko.json
+│   │   │   │   │       └── UkrOgienko.zip
+│   │   │   │   ├── vi
+│   │   │   │   │   └── Viet
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── Viet-osis.json
+│   │   │   │   │       ├── Viet.json
+│   │   │   │   │       └── Viet.zip
+│   │   │   │   ├── vls
+│   │   │   │   │   └── vlsJoNT
+│   │   │   │   │       ├── README.md
+│   │   │   │   │       ├── vlsJoNT-osis.json
+│   │   │   │   │       ├── vlsJoNT.json
+│   │   │   │   │       └── vlsJoNT.zip
+│   │   │   │   ├── zh-hans
+│   │   │   │   │   ├── ChiUns.zip
+│   │   │   │   │   └── README.md
+│   │   │   │   └── zh-hant
+│   │   │   │       ├── ChiSB
+│   │   │   │       │   ├── ChiSB-osis.json
+│   │   │   │       │   ├── ChiSB.json
+│   │   │   │       │   ├── ChiSB.zip
+│   │   │   │       │   └── README.md
+│   │   │   │       └── ChiUn
+│   │   │   │           ├── ChiUn-osis.json
+│   │   │   │           ├── ChiUn.json
+│   │   │   │           ├── ChiUn.zip
+│   │   │   │           └── README.md
+│   │   │   └── tests
+│   │   │       ├── known_plain_text_markup.json
+│   │   │       ├── test_generators.py
+│   │   │       ├── test_plain_text_markup.py
+│   │   │       └── test_scripts.py
+│   │   └── stepbible
+│   │       ├── _config.yml
+│   │       ├── Lexicons
+│   │       │   ├── TBESG - Translators Brief lexicon of Extended Strongs for Greek - STEPBible.org CC BY.txt
+│   │       │   ├── TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt
+│   │       │   ├── TFLSJ  0-5624 - Translators Formatted full LSJ Bible lexicon - STEPBible.org CC BY.txt
+│   │       │   └── TFLSJ extra - Translators Formatted full LSJ Bible lexicon - STEPBible.org CC BY.txt
+│   │       ├── Morphology codes
+│   │       │   ├── TEGMC - Translators Expansion of Greek Morphhology Codes - STEPBible.org CC BY.txt
+│   │       │   └── TEHMC - Translators Expansion of Hebrew Morphology Codes - STEPBible.org CC BY.txt
+│   │       ├── Older Formats
+│   │       │   ├── TAGNT Act-Rev - Translators Amalgamated Greek NT - STEPBible.org CC-BY.txt
+│   │       │   ├── TAGNT Mat-Jhn - Translators Amalgamated Greek NT - STEPBible.org CC-BY.txt
+│   │       │   ├── TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt
+│   │       │   ├── TOTHT Gen-Deu - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   ├── TOTHT Isa-Mal - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   ├── TOTHT Job-Sng - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   ├── TOTHT Jos-Est - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   ├── TVTMS - till Dec 2024 NRSV-based Translators Versification Traditions with Methodology for Standardisation for Eng+Heb+Lat+Grk+Others - STEPBible.org CC BY.txt
+│   │       │   └── TVTMS - till Mar 2025 KJV-based with old formats for subverses - STEPBible.org CC BY.txt
+│   │       ├── Proper Nouns
+│   │       │   └── TIPNR - Translators Individualised Proper Names with all References - STEPBible.org CC BY.txt
+│   │       ├── README.md
+│   │       ├── Tagged-Bibles
+│   │       │   ├── Arabic Bibles
+│   │       │   │   ├── AraSVD_sb-6.0.1-CC-BY-SA..xml
+│   │       │   │   ├── AraSVD_sb-7.0.1-CC-BY-SA.xml
+│   │       │   │   ├── Readme.md
+│   │       │   │   ├── SVD Tagging Documents
+│   │       │   │   │   ├── ما هي أرقام سترونج.docx
+│   │       │   │   │   ├── ربط (وسم) كلمات ترجمة سميث وفان دايك العربية بأرقام سترونج (Unicode Encoding Conflict).docx
+│   │       │   │   │   ├── ربط (وسم) كلمات ترجمة سميث وفان دايك العربية بأرقام سترونج.docx
+│   │       │   │   │   └── Tagging of Smith - Van Dyck Arabic translation with Strong’s Numbers.docx
+│   │       │   │   ├── Translation Tags Individual Books
+│   │       │   │   │   ├── NT_01_Mat_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_02_Mrk_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_03_Luk_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_04_Jhn_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_05_Act_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_06_Rom_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_07_1Co_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_08_2Co_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_09_Gal_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_10_Eph_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_11_Php_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_12_Col_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_13_1Th_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_14_2Th_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_15_1Ti_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_16_2Ti_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_17_Tit_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_18_Phm_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_19_Heb_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_20_Jas_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_21_1Pe_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_22_2Pe_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_23_1Jn_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_24_2Jn_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_25_3Jn_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_26_Jud_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── NT_27_Rev_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_01_Gen_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_02_Exo_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_03_Lev_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_04_Num_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_05_Deu_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_06_Jos_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_07_Jdg_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_08_Rut_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_09_1Sa_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_10_2Sa_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_11_1Ki_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_12_2Ki_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_13_1Ch_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_14_2Ch_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_15_Ezr_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_16_Neh_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_17_Est_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_18_Job_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_19_Psa_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_20_Pro_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_21_Ecc_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_22_Sng_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_23_Isa_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_24_Jer_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_25_Lam_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_26_Ezk_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_27_Dan_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_28_Hos_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_29_Jol_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_30_Amo_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_31_Oba_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_32_Jon_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_33_Mic_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_34_Nam_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_35_Hab_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_36_Zep_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_37_Hag_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_38_Zec_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   ├── OT_39_Mal_TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_4_0_1.txt
+│   │       │   │   │   └── README
+│   │       │   │   ├── TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_NT_4_0_1.txt
+│   │       │   │   └── TTAraSVD - Translation Tags for Arabic SVD - STEPBible.org CC BY-SA_OT_4_0_1.txt.zip
+│   │       │   └── TTESV - Tyndale Translation tags for ESV - TyndaleHouse.com STEPBible.org CC BY-NC.txt
+│   │       ├── Translators Amalgamated OT+NT
+│   │       │   ├── OLD format TOTHT
+│   │       │   │   ├── TOTHT Gen-Deu - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   │   ├── TOTHT Isa-Mal - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   │   ├── TOTHT Job-Sng - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   │   └── TOTHT Jos-Est - Translators OT Hebrew Tagged text - STEPBible.org CC BY.txt
+│   │       │   ├── TAGNT Act-Rev - Translators Amalgamated Greek NT - STEPBible.org CC-BY.txt
+│   │       │   ├── TAGNT Mat-Jhn - Translators Amalgamated Greek NT - STEPBible.org CC-BY.txt
+│   │       │   ├── TAHOT Gen-Deu - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+│   │       │   ├── TAHOT Isa-Mal - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+│   │       │   ├── TAHOT Job-Sng - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+│   │       │   └── TAHOT Jos-Est - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+│   │       └── Versification
+│   │           └── TVTMS - Translators Versification Traditions with Methodology for Standardisation for Eng+Heb+Lat+Grk+Others - STEPBible.org CC BY.txt
+│   └── texts
+│       ├── bsb.json
+│       └── kjv.json
+├── db
+│   └── bible-index.sqlite
+├── directory-map.txt
+├── package-lock.json
+├── package.json
+├── README.md
+├── scripts
+│   ├── import-hebrew-lexicon.ts
+│   ├── import-hebrew.ts
+│   ├── import-lexicon.ts
+│   ├── import-many.ts
+│   ├── import-original.ts
+│   ├── import-text.ts
+│   ├── schema.sql
+│   ├── test-osis.ts
+│   └── test-osis2.ts
+├── src
+│   ├── app.d.ts
+│   ├── app.html
+│   ├── lib
+│   │   ├── assets
+│   │   │   └── favicon.svg
+│   │   ├── books.ts
+│   │   ├── index.ts
+│   │   ├── osis.ts
+│   │   ├── server
+│   │   │   └── db.ts
+│   │   └── stepbible.ts
+│   └── routes
+│       ├── +layout.svelte
+│       ├── +page.server.ts
+│       ├── +page.svelte
+│       ├── lexicon
+│       │   └── [strongs]
+│       │       ├── +page.server.ts
+│       │       └── +page.svelte
+│       └── read
+│           └── [book]
+│               └── [chapter]
+│                   ├── +page.server.ts
+│                   └── +page.svelte
+├── static
+│   └── robots.txt
+├── tsconfig.json
+└── vite.config.ts
+
+311 directories, 2037 files

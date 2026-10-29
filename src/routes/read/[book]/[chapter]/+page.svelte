@@ -37,7 +37,7 @@
       {#if v.text}{v.text}{:else}<em>(verse not present in {data.translation})</em>{/if}
     </p>
     {#if data.interlinear && data.words[v.verse]}
-      <div class="il" dir={rtl ? 'rtl' : 'ltr'}>
+      <div class="il" dir="ltr">
         {#each data.words[v.verse] as w (w.position)}
           <a class="w" href="/lexicon/{w.estrong}">
             <span class="gr" class:heb={rtl}>{w.surface}</span>
