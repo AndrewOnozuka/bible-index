@@ -1,4 +1,6 @@
 <script lang="ts">
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
   let { data } = $props();
 </script>
 
@@ -7,7 +9,7 @@
   <details>
     <summary>{b.name}</summary>
     {#each Array(b.chapters) as _, i}
-      <a href="/read/{b.osis}/{i + 1}">{i + 1}</a>{' '}
+      <a href="{base}/read/{b.osis}/{i + 1}">{i + 1}</a>{' '}
     {/each}
   </details>
 {/each}
