@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { translationInfo } from '#lib/translations';
   const base = import.meta.env.VITE_BASE_PATH;
   console.log('BASE_URL:', import.meta.env.BASE_URL, 'base:', base);
 
@@ -6,20 +7,36 @@
   const tail = $derived(`?t=${data.translation}${data.interlinear ? '&i=1' : ''}`);
   const label = $derived(data.lang === 'heb' ? 'Hebrew' : 'Greek');
   const rtl = $derived(data.lang === 'heb');
+
+  const orderedTranslations = $derived(
+    [...data.translations].sort((a, b) => {
+      const rankA = translationInfo[a]?.rank ?? Number.MAX_SAFE_INTEGER;
+      const rankB = translationInfo[b]?.rank ?? Number.MAX_SAFE_INTEGER;
+      return rankA - rankB || a.localeCompare(b);
+    })
+  );
 </script>
 
 <p><a href="{base}/">← All books</a></p>
 <h1>{data.name} {data.chapter}</h1>
 
-<p>
-  {#each data.translations as t}
+<nav aria-label="Choose translation" class="translations">
+  {#each orderedTranslations as t}
     {#if t === data.translation}
-      <strong>{t}</strong>
+      <strong aria-current="true">
+        <span aria-hidden="true">{translationInfo[t]?.flag ?? '🌐'}</span>
+        {t}
+        <small>{translationInfo[t]?.language ?? 'Language not set'}</small>
+      </strong>
     {:else}
-      <a href="?t={t}{data.interlinear ? '&i=1' : ''}">{t}</a>
-    {/if}{' '}
+      <a href="?t={t}{data.interlinear ? '&i=1' : ''}">
+        <span aria-hidden="true">{translationInfo[t]?.flag ?? '🌐'}</span>
+        {t}
+        <small>{translationInfo[t]?.language ?? 'Language not set'}</small>
+      </a>
+    {/if}
   {/each}
-</p>
+</nav>
 
 <p>
   {#if data.hasOriginal}
