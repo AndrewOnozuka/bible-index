@@ -15,3 +15,5 @@
 {/each}
 
 <p><a href="{base}/confessions">Confessions and Catechisms</a></p>
+
+<p><a href="{base}/map">Concept Map</a></p>
