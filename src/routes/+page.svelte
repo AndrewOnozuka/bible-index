@@ -13,3 +13,5 @@
     {/each}
   </details>
 {/each}
+
+<p><a href="{base}/confessions">Confessions and Catechisms</a></p>

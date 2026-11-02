@@ -147,7 +147,9 @@ export function load({ params, url, cookies }) {
     db.prepare(
       'SELECT DISTINCT translation FROM verse_text ORDER BY translation'
     ).all() as { translation: string }[]
-  ).map((r) => r.translation);
+  )
+  .map((r) => r.translation)
+  .filter((translation) => ['ESV', 'KJV', 'JapSKY2017'].includes(translation));
 
   const fromUrl = url.searchParams.get('t');
   const fromCookie = cookies.get('translation');

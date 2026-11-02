@@ -14,13 +14,19 @@ export const translationInfo: Record<string, TranslationInfo> = {
     flag: '🇺🇸',
     rank: 1
   },
-  
+  JapSKY2017: {
+    name: 'SKY2017 新改訳 Shinkaiyaku',
+    language: 'Japanese',
+    countries: ['Japan'],
+    flag: '🇯🇵',
+    rank: 2
+  },
   KJV: {
     name: 'King James Version',
     language: 'English',
     countries: ['United Kingdom'],
     flag: '🇬🇧',
-    rank: 1
+    rank: 3
   },
   JapBungo: {
     name: 'Japanese Bungo',
