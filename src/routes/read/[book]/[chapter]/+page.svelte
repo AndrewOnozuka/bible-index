@@ -1,12 +1,28 @@
 <script lang="ts">
   import { translationInfo } from '#lib/translations';
   const base = import.meta.env.VITE_BASE_PATH;
-  console.log('BASE_URL:', import.meta.env.BASE_URL, 'base:', base);
 
   let { data } = $props();
-  const tail = $derived(`?t=${data.translation}${data.interlinear ? '&i=1' : ''}`);
   const label = $derived(data.lang === 'heb' ? 'Hebrew' : 'Greek');
   const rtl = $derived(data.lang === 'heb');
+
+  // Prev/Next links carry the current choices (the cookies cover anything omitted)
+  const tail = $derived(
+    `?t=${data.translation}${data.translation2 ? `&t2=${data.translation2}` : ''}${data.interlinear ? '&i=1' : ''}`
+  );
+
+  // Build a link that changes one choice and keeps the others
+  function qs(o: { t?: string; t2?: string | null; i?: boolean } = {}) {
+    const p = new URLSearchParams();
+    p.set('t', o.t ?? data.translation);
+    const t2 = o.t2 === undefined ? data.translation2 : o.t2;
+    p.set('t2', t2 ?? 'none');
+    if (o.i ?? data.interlinear) p.set('i', '1');
+    return '?' + p.toString();
+  }
+
+  // Tag Japanese text so the browser picks Japanese glyph shapes
+  const langOf = (t: string | null) => (t && t.startsWith('Jap') ? 'ja' : undefined);
 
   const orderedTranslations = $derived(
     [...data.translations].sort((a, b) => {
@@ -29,7 +45,7 @@
         <small>{translationInfo[t]?.language ?? 'Language not set'}</small>
       </strong>
     {:else}
-      <a href="?t={t}{data.interlinear ? '&i=1' : ''}">
+      <a href={qs({ t })}>
         <span aria-hidden="true">{translationInfo[t]?.flag ?? '🌐'}</span>
         {t}
         <small>{translationInfo[t]?.language ?? 'Language not set'}</small>
@@ -38,12 +54,40 @@
   {/each}
 </nav>
 
+{#if orderedTranslations.length > 1}
+  <nav aria-label="Choose second translation" class="translations">
+    <span>Also show:</span>
+    {#if !data.translation2}
+      <strong aria-current="true">None</strong>
+    {:else}
+      <a href={qs({ t2: null })}>None</a>
+    {/if}
+    {#each orderedTranslations as t}
+      {#if t !== data.translation}
+        {#if t === data.translation2}
+          <strong aria-current="true">
+            <span aria-hidden="true">{translationInfo[t]?.flag ?? '🌐'}</span>
+            {t}
+            <small>{translationInfo[t]?.language ?? 'Language not set'}</small>
+          </strong>
+        {:else}
+          <a href={qs({ t2: t })}>
+            <span aria-hidden="true">{translationInfo[t]?.flag ?? '🌐'}</span>
+            {t}
+            <small>{translationInfo[t]?.language ?? 'Language not set'}</small>
+          </a>
+        {/if}
+      {/if}
+    {/each}
+  </nav>
+{/if}
+
 <p>
   {#if data.hasOriginal}
     {#if data.interlinear}
-      <a href="?t={data.translation}">Hide {label}</a>
+      <a href={qs({ i: false })}>Hide {label}</a>
     {:else}
-      <a href="?t={data.translation}&i=1">Show {label}</a>
+      <a href={qs({ i: true })}>Show {label}</a>
     {/if}
   {:else if data.interlinear}
     <em>No original-language data for this book.</em>
@@ -52,10 +96,15 @@
 
 {#each data.verses as v (v.verse)}
   <div id="v{v.verse}">
-    <p>
+    <p lang={langOf(data.translation)}>
       <sup>{v.verse}</sup>
       {#if v.text}{v.text}{:else}<em>(verse not present in {data.translation})</em>{/if}
     </p>
+    {#if data.translation2}
+      <p class="second" lang={langOf(data.translation2)}>
+        {#if v.text2}{v.text2}{:else}<em>(verse not present in {data.translation2})</em>{/if}
+      </p>
+    {/if}
     {#if data.interlinear && data.words[v.verse]}
       <div class="il" dir="ltr">
         {#each data.words[v.verse] as w (w.position)}
@@ -85,6 +134,8 @@
 </nav>
 
 <style>
+  .second { margin: -0.5rem 0 0.8rem 1.2rem; padding-left: 0.6rem; border-left: 2px solid #8886; }
+  .second[lang='ja'] { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; }
   .il { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; margin: 0.25rem 0 1rem 1.2rem; }
   .w { position: relative; display: flex; flex-direction: column; text-align: center; text-decoration: none; color: inherit; }
   .gr { font-size: 1.15em; }

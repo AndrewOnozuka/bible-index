@@ -1,67 +1,3 @@
-// import { db } from '#lib/server/db';
-// import { bookName } from '#lib/books';
-// import { error } from '@sveltejs/kit';
-
-// type Word = {
-//   verse: number; position: number; surface: string; translit: string; english: string;
-//   strongs: string; estrong: string; morph: string; gloss: string | null; lemma: string | null;
-// };
-
-// export function load({ params, url, cookies }) {
-//   const chapter = Number(params.chapter);
-
-//   const translations = (
-//     db.prepare('SELECT DISTINCT translation FROM verse_text ORDER BY translation').all() as { translation: string }[]
-//   ).map((r) => r.translation);
-
-//   const fromUrl = url.searchParams.get('t');
-//   const fromCookie = cookies.get('translation');
-//   let translation: string;
-//   if (fromUrl && translations.includes(fromUrl)) {
-//     translation = fromUrl;
-//     cookies.set('translation', translation, { path: '/', maxAge: 60 * 60 * 24 * 365, sameSite: 'lax' });
-//   } else if (fromCookie && translations.includes(fromCookie)) {
-//     translation = fromCookie;
-//   } else {
-//     translation = translations.includes('KJV') ? 'KJV' : translations[0];
-//   }
-
-//   const verses = db.prepare(
-//     `SELECT v.verse, t.text FROM verses v
-//      LEFT JOIN verse_text t ON t.verse_id = v.id AND t.translation = ?
-//      WHERE v.book = ? AND v.chapter = ? ORDER BY v.verse`
-//   ).all(translation, params.book, chapter) as { verse: number; text: string | null }[];
-//   if (!verses.length) throw error(404, 'Chapter not found');
-
-//   const max = (db.prepare('SELECT MAX(chapter) m FROM verses WHERE book = ?').get(params.book) as any).m;
-
-//   const orig = db.prepare(
-//     `SELECT o.lang AS lang FROM original_words o JOIN verses v ON v.id = o.verse_id
-//      WHERE v.book = ? AND v.chapter = ? LIMIT 1`
-//   ).get(params.book, chapter) as { lang: string } | undefined;
-//   const hasOriginal = !!orig;
-//   const lang = orig?.lang ?? null;
-
-//   const interlinear = url.searchParams.get('i') === '1';
-//   const words: Record<number, Word[]> = {};
-//   if (interlinear && hasOriginal) {
-//     const rows = db.prepare(
-//       `SELECT v.verse AS verse, o.position, o.surface, o.translit, o.english, o.strongs, o.estrong, o.morph,
-//               l.gloss, l.lemma
-//        FROM verses v
-//        JOIN original_words o ON o.verse_id = v.id
-//        LEFT JOIN lexicon l ON l.strongs = o.estrong
-//        WHERE v.book = ? AND v.chapter = ? ORDER BY v.verse, o.position`
-//     ).all(params.book, chapter) as Word[];
-//     for (const r of rows) (words[r.verse] ??= []).push(r);
-//   }
-
-//   return {
-//     book: params.book, name: bookName(params.book), chapter, max,
-//     translation, translations, verses, interlinear, hasOriginal, lang, words
-//   };
-// }
-
 import { db } from '#lib/server/db';
 import { BOOKS, bookName } from '#lib/books';
 import { error } from '@sveltejs/kit';
@@ -78,6 +14,8 @@ type Word = {
   gloss: string | null;
   lemma: string | null;
 };
+
+type VerseRow = { verse: number; text: string | null; text2: string | null };
 
 // Only prerender reading pages during the dedicated static build.
 export const prerender = process.env.STATIC_KJV_BUILD === '1';
@@ -102,7 +40,7 @@ export function load({ params, url, cookies }) {
 
   // Static GitHub Pages build: KJV only, with no URL or cookie access.
   if (process.env.STATIC_KJV_BUILD === '1') {
-    const verses = db.prepare(`
+    const rows = db.prepare(`
       SELECT v.verse, t.text
       FROM verses v
       JOIN verse_text t
@@ -110,14 +48,13 @@ export function load({ params, url, cookies }) {
        AND t.translation = 'KJV'
       WHERE v.book = ? AND v.chapter = ?
       ORDER BY v.verse
-    `).all(params.book, chapter) as {
-      verse: number;
-      text: string;
-    }[];
+    `).all(params.book, chapter) as { verse: number; text: string }[];
 
-    if (!verses.length) {
+    if (!rows.length) {
       throw error(404, 'Chapter not found');
     }
+
+    const verses: VerseRow[] = rows.map((r) => ({ ...r, text2: null }));
 
     const max = (
       db.prepare(`
@@ -133,6 +70,7 @@ export function load({ params, url, cookies }) {
       chapter,
       max,
       translation: 'KJV',
+      translation2: null as string | null,
       translations: ['KJV'],
       verses,
       interlinear: false,
@@ -148,9 +86,12 @@ export function load({ params, url, cookies }) {
       'SELECT DISTINCT translation FROM verse_text ORDER BY translation'
     ).all() as { translation: string }[]
   )
-  .map((r) => r.translation)
-  .filter((translation) => ['ESV', 'KJV', 'JapSKY2017'].includes(translation));
+    .map((r) => r.translation)
+    .filter((translation) => ['ESV', 'KJV', 'JapSKY2017'].includes(translation));
 
+  const cookieOpts = { path: '/', maxAge: 60 * 60 * 24 * 365, sameSite: 'lax' } as const;
+
+  // Primary translation: ?t= link, then cookie, then KJV
   const fromUrl = url.searchParams.get('t');
   const fromCookie = cookies.get('translation');
 
@@ -158,18 +99,26 @@ export function load({ params, url, cookies }) {
 
   if (fromUrl && translations.includes(fromUrl)) {
     translation = fromUrl;
-    cookies.set('translation', translation, {
-      path: '/',
-      maxAge: 60 * 60 * 24 * 365,
-      sameSite: 'lax'
-    });
+    cookies.set('translation', translation, cookieOpts);
   } else if (fromCookie && translations.includes(fromCookie)) {
     translation = fromCookie;
   } else {
     translation = translations.includes('KJV') ? 'KJV' : translations[0];
   }
 
-  const verses = db.prepare(`
+  // Second translation: ?t2= link ("none" clears it), then cookie, then nothing
+  const t2Url = url.searchParams.get('t2');
+  const t2Cookie = cookies.get('translation2');
+  let translation2: string | null = null;
+
+  if (t2Url !== null) {
+    translation2 = translations.includes(t2Url) && t2Url !== translation ? t2Url : null;
+    cookies.set('translation2', translation2 ?? 'none', cookieOpts);
+  } else if (t2Cookie && translations.includes(t2Cookie) && t2Cookie !== translation) {
+    translation2 = t2Cookie;
+  }
+
+  const rows = db.prepare(`
     SELECT v.verse, t.text
     FROM verses v
     LEFT JOIN verse_text t
@@ -182,9 +131,27 @@ export function load({ params, url, cookies }) {
     text: string | null;
   }[];
 
-  if (!verses.length) {
+  if (!rows.length) {
     throw error(404, 'Chapter not found');
   }
+
+  const second = new Map<number, string | null>();
+  if (translation2) {
+    const rows2 = db.prepare(`
+      SELECT v.verse, t.text
+      FROM verses v
+      LEFT JOIN verse_text t
+        ON t.verse_id = v.id
+       AND t.translation = ?
+      WHERE v.book = ? AND v.chapter = ?
+    `).all(translation2, params.book, chapter) as { verse: number; text: string | null }[];
+    for (const r of rows2) second.set(r.verse, r.text);
+  }
+
+  const verses: VerseRow[] = rows.map((r) => ({
+    ...r,
+    text2: translation2 ? (second.get(r.verse) ?? null) : null
+  }));
 
   const max = (
     db.prepare(
@@ -206,7 +173,7 @@ export function load({ params, url, cookies }) {
   const words: Record<number, Word[]> = {};
 
   if (interlinear && hasOriginal) {
-    const rows = db.prepare(`
+    const wordRows = db.prepare(`
       SELECT
         v.verse AS verse,
         o.position,
@@ -225,7 +192,7 @@ export function load({ params, url, cookies }) {
       ORDER BY v.verse, o.position
     `).all(params.book, chapter) as Word[];
 
-    for (const r of rows) {
+    for (const r of wordRows) {
       (words[r.verse] ??= []).push(r);
     }
   }
@@ -236,6 +203,7 @@ export function load({ params, url, cookies }) {
     chapter,
     max,
     translation,
+    translation2,
     translations,
     verses,
     interlinear,
