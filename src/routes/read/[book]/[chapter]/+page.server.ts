@@ -35,6 +35,22 @@ export function entries() {
   }));
 }
 
+function rubyFor(translation: string | null, book: string, chapter: number): Record<number, string> {
+  const out: Record<number, string> = {};
+  if (!translation || !translation.startsWith('Jap')) return out;
+  try {
+    const rows = db.prepare(
+      'SELECT v.verse AS verse, r.html AS html FROM verses v ' +
+      'JOIN verse_ruby r ON r.verse_id = v.id AND r.translation = ? ' +
+      'WHERE v.book = ? AND v.chapter = ?'
+    ).all(translation, book, chapter) as { verse: number; html: string }[];
+    for (const r of rows) out[r.verse] = r.html;
+  } catch {
+    // verse_ruby does not exist yet
+  }
+  return out;
+}
+
 export function load({ params, url, cookies }) {
   const chapter = Number(params.chapter);
 
@@ -72,6 +88,9 @@ export function load({ params, url, cookies }) {
       translation: 'KJV',
       translation2: null as string | null,
       translations: ['KJV'],
+      showRuby: false,
+      ruby: {} as Record<number, string>,
+      ruby2: {} as Record<number, string>,
       verses,
       interlinear: false,
       hasOriginal: false,
@@ -167,6 +186,12 @@ export function load({ params, url, cookies }) {
     LIMIT 1
   `).get(params.book, chapter) as { lang: string } | undefined;
 
+  const rParam = url.searchParams.get('r');
+  if (rParam !== null) cookies.set('ruby', rParam === '1' ? '1' : '0', cookieOpts);
+  const showRuby = (rParam ?? cookies.get('ruby')) === '1';
+  const ruby = showRuby ? rubyFor(translation, params.book, chapter) : {};
+  const ruby2 = showRuby ? rubyFor(translation2, params.book, chapter) : {};
+
   const hasOriginal = !!orig;
   const lang = orig?.lang ?? null;
   const interlinear = url.searchParams.get('i') === '1';
@@ -209,6 +234,9 @@ export function load({ params, url, cookies }) {
     interlinear,
     hasOriginal,
     lang,
-    words
+    words,
+    showRuby,
+    ruby,
+    ruby2
   };
 }

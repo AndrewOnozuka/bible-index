@@ -5,6 +5,7 @@
   let { data } = $props();
   const label = $derived(data.lang === 'heb' ? 'Hebrew' : 'Greek');
   const rtl = $derived(data.lang === 'heb');
+  const hasJa = $derived([data.translation, data.translation2].some((t) => t?.startsWith('Jap')));
 
   // Prev/Next links carry the current choices (the cookies cover anything omitted)
   const tail = $derived(
@@ -12,12 +13,13 @@
   );
 
   // Build a link that changes one choice and keeps the others
-  function qs(o: { t?: string; t2?: string | null; i?: boolean } = {}) {
+  function qs(o: { t?: string; t2?: string | null; i?: boolean; r?: boolean } = {}) {
     const p = new URLSearchParams();
     p.set('t', o.t ?? data.translation);
     const t2 = o.t2 === undefined ? data.translation2 : o.t2;
     p.set('t2', t2 ?? 'none');
     if (o.i ?? data.interlinear) p.set('i', '1');
+    p.set('r', (o.r ?? data.showRuby) ? '1' : '0');
     return '?' + p.toString();
   }
 
@@ -82,6 +84,16 @@
   </nav>
 {/if}
 
+{#if hasJa}
+  <p>
+    {#if data.showRuby}
+      <a href={qs({ r: false })}>Hide readings</a>
+    {:else}
+      <a href={qs({ r: true })}>Show readings</a>
+    {/if}
+  </p>
+{/if}
+
 <p>
   {#if data.hasOriginal}
     {#if data.interlinear}
@@ -98,11 +110,11 @@
   <div id="v{v.verse}">
     <p lang={langOf(data.translation)}>
       <sup>{v.verse}</sup>
-      {#if v.text}{v.text}{:else}<em>(verse not present in {data.translation})</em>{/if}
+      {#if data.ruby[v.verse]}{@html data.ruby[v.verse]}{:else if v.text}{v.text}{:else}<em>(verse not present in {data.translation})</em>{/if}
     </p>
     {#if data.translation2}
       <p class="second" lang={langOf(data.translation2)}>
-        {#if v.text2}{v.text2}{:else}<em>(verse not present in {data.translation2})</em>{/if}
+        {#if data.ruby2[v.verse]}{@html data.ruby2[v.verse]}{:else if v.text2}{v.text2}{:else}<em>(verse not present in {data.translation2})</em>{/if}
       </p>
     {/if}
     {#if data.interlinear && data.words[v.verse]}
@@ -136,6 +148,8 @@
 <style>
   .second { margin: -0.5rem 0 0.8rem 1.2rem; padding-left: 0.6rem; border-left: 2px solid #8886; }
   .second[lang='ja'] { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; }
+  :global(ruby rt) { font-size: 0.55em; opacity: 0.8; }
+  p[lang='ja'] { line-height: 2.1; }
   .il { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; margin: 0.25rem 0 1rem 1.2rem; }
   .w { position: relative; display: flex; flex-direction: column; text-align: center; text-decoration: none; color: inherit; }
   .gr { font-size: 1.15em; }

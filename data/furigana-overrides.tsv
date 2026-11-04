@@ -1,0 +1,30 @@
+# Furigana corrections. Tab-separated, saved in UTF-8.
+#   word<TAB>reading                  applies everywhere
+#   verse_id<TAB>word<TAB>reading     only in that verse
+# A reading of - means "show no reading". Lines starting with # are comments.
+#
+# Example (delete the leading # to use):
+# 行った	おこなった
+Luke.14 安息日  あんそくにち
+Luke.14 律法    りっぽう
+Luke.14   癒  い
+Luke.14  大勢    おおぜい
+Luke.14.3   人  びと
+Luke.14.4   帰さ  かえさ
+Luke.14.32  間  あいだ
+
+
+# Luke.14.1   安息日  あんそくにち
+# Luke.14.3   律法    りっぽう
+# Luke.14.3   安息日  あんそくにち
+
+# global: always read this way
+# 安息日 あんそくにち
+# 律法 りっぽう
+
+# only in one verse
+# Luke.14.3 人 びと
+
+# whole chapter, or whole book
+# Luke.14 人 びと
+# Luke 安息日 あんそくにち

@@ -27,3 +27,4 @@ data/texts/esv*
 db/*.sqlite
 data/raw
 data/texts/esv*
+db/.furigana-hash
